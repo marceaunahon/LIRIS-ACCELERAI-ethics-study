@@ -4,7 +4,6 @@ from questionnaire import Questionnaire
 from sliders_GUI import SlidersGUI
 from choice_situation_GUI import ChoiceSituationGUI
 from acceptability_GUI import AcceptabilityGUI
-from acceptability_GUI2 import AcceptabilityGUI2
 from user import User
 import numpy as np
 from data import Value, ChoiceSituation
@@ -41,7 +40,7 @@ if menu.global_param[2] == 1:
     choice_results_matrix = choice_GUI.results
     choice_results_list = choice_results_matrix.tolist()
 if menu.global_param[3] == 1:
-    acceptability_GUI = AcceptabilityGUI2(menu.selected_situations) #voir pour disp values
+    acceptability_GUI = AcceptabilityGUI(menu.selected_situations) #voir pour disp values
     acceptability_GUI.mainloop()
     acceptability_results_matrix = acceptability_GUI.results
     acceptability_results_list = acceptability_results_matrix.tolist()

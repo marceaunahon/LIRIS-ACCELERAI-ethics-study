@@ -29,7 +29,8 @@ class AcceptabilityGUI(GeneralGUI):
 
         #Création des variables
         self.acceptability = ctk.IntVar(value=1)
-        self.value_change = ctk.IntVar()
+        self.value_change = ctk.IntVar(value=2)
+        self.value_change_str = ctk.StringVar()
 
         #Options
         self.disp_values = disp_values
@@ -40,16 +41,27 @@ class AcceptabilityGUI(GeneralGUI):
         self.var_int_to_string() #affiche les variables des sliders en texte pour une meilleure compréhension de l'utilisateur
 
     def save(self):
-        self.acceptabilities[self.situation_count] = self.acceptability.get()
+        #self.acceptabilities[self.situation_count] = self.acceptability.get()
         self.value_changes[self.situation_count] = self.value_change.get()
 
-        self.results[self.situation_count][0] = self.acceptabilities[self.situation_count]
-        self.results[self.situation_count][1] = self.value_changes[self.situation_count]
+        #self.results[self.situation_count][0] = self.acceptabilities[self.situation_count]
+        self.results[self.situation_count] = self.value_changes[self.situation_count]
 
 
     def var_int_to_string(self):
         #Pour l'affichage du slider, il semble plus comprehensible d'utiliser des indicateurs textuels,
         #plutot que les valeurs initiales comprises entre 0 et 1
+        if self.value_change.get() == 0:
+            self.value_change_str.set("Très satisfaisante, il ne faut pas intervenir")
+        if self.value_change.get() == 1:
+            self.value_change_str.set("Acceptable, pas besoin d'intervenir")
+        if self.value_change.get() == 2:
+            self.value_change_str.set("Difficile à juger, une intervention pourrait se justifer")
+        if self.value_change.get() == 3:
+            self.value_change_str.set("Pas satisfaisante, ce serait mieux d'intervenir")
+        if self.value_change.get() == 4:
+            self.value_change_str.set("Pas acceptable, il faut intervenir")
+
         self.after(200, self.var_int_to_string)
 
     def reset(self):
@@ -143,23 +155,15 @@ class EvalFrame(ctk.CTkFrame):
         self.place(relx=0.5, rely=0.31, relwidth = 0.6, relheight = 0.8, anchor="center")
 
         #Boutons et sliders utilisés en configuration "threshold"
-        self.ok_or_not_ok = ctk.CTkLabel(master=self, text="La situation vous semble-t-elle acceptable en l'état ?", font=self.font)
+        self.ok_or_not_ok = ctk.CTkLabel(master=self, text="Sans intervention de votre part, le sytème va agir", font=self.font)
         self.ok_or_not_ok.place(relx=0.5, rely=0.25, anchor="center")
 
-        self.slider_label = ctk.CTkLabel(master=self, text="Variable première valeur", font=self.font2)
-        self.slider_label.place(relx=0.5, rely = 0.65, anchor="center")
-        self.slider = ctk.CTkSlider(self, from_=0, to=10, number_of_steps=10, variable=GUI.value_change)
-        self.slider.place(relx=0.5, rely=0.75, anchor="center")
-        self.slider.configure(button_color="#C0C0C0", state="disabled")
-        self.variable_label = ctk.CTkLabel(master=self, textvariable=GUI.value_change)
-        self.variable_label.place(relx=0.5, rely = 0.85, anchor="center")
-
-        self.ok = ctk.CTkRadioButton(master=self, text = "Oui", font=self.font2, variable=GUI.acceptability, 
-                                     value=1, command=lambda:self.change_slider_state(GUI))
-        self.ok.place(relx = 0.31, rely = 0.45, anchor="w")
-        self.not_ok = ctk.CTkRadioButton(master=self, text = "Non", font=self.font2, variable=GUI.acceptability, 
-                                         value=0, command=lambda:self.change_slider_state(GUI))
-        self.not_ok.place(relx = 0.61, rely = 0.45, anchor="w")
+        self.slider_label = ctk.CTkLabel(master=self, text="La décision du système est :", font=self.font2)
+        self.slider_label.place(relx=0.5, rely = 0.5, anchor="center")
+        self.slider = ctk.CTkSlider(self, from_=0, to=4, number_of_steps=4, variable=GUI.value_change)
+        self.slider.place(relx=0.5, rely=0.65, anchor="center")
+        self.variable_label = ctk.CTkLabel(master=self, textvariable=GUI.value_change_str, font=self.font2)
+        self.variable_label.place(relx=0.5, rely = 0.8, anchor="center")
 
     def change_slider_state(self, GUI : AcceptabilityGUI):
         if GUI.acceptability.get() == 0:
@@ -169,7 +173,7 @@ class EvalFrame(ctk.CTkFrame):
             self.slider.set(0)
 
     def reset(self, GUI : AcceptabilityGUI):
-        self.slider.configure(button_color="#C0C0C0", state="disabled")
+        #self.slider.configure(button_color="#C0C0C0", state="disabled")
         self.slider.set(0)
         GUI.acceptability.set(1)
 

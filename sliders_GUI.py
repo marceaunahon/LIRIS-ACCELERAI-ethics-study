@@ -1,10 +1,8 @@
 import customtkinter as ctk
 import numpy as np
 from PIL import Image
-from CTkMessagebox import CTkMessagebox
 from data import read_values_and_situations, Value
 from typing import List
-from definition_window import DefinitionWindow
 
 
 ctk.set_appearance_mode("System")
@@ -16,7 +14,7 @@ class SlidersGUI(ctk.CTk):
         super().__init__()
         self.iconbitmap('Images/liris.ico')
         self.title("Questionnaire valeurs")
-        self.geometry("900x500")
+        self.geometry("900x700")
 
         self.values = all_values
         self.selected_values = selected_values
@@ -42,58 +40,48 @@ class SlidersGUI(ctk.CTk):
         self.destroy()    
 
 class ValuesFrame(ctk.CTkFrame):
-    def __init__(self, parent: SlidersGUI,_relx, _rely, value1, value2, value3):
+    def __init__(self, parent: SlidersGUI,_relx, _rely, value1 : Value, value2 : Value, value3 : Value):
         super().__init__(master=parent)
         self.info_img = ctk.CTkImage(Image.open("Images/q.png"), size=(30,30))
-        self.place(relx = _relx, rely= _rely, relwidth = 0.4, relheight = 0.75, anchor="center")
+        self.place(relx = _relx, rely= _rely, relwidth = 0.48, relheight = 0.75, anchor="center")
         self.font = ctk.CTkFont(size=16, weight="bold")
+        self.font2 = ctk.CTkFont(size=12)
 
         self.value1_title = ctk.CTkLabel(master=self, text=value1.name_fr, font=self.font)
-        self.value1_title.place(relx= 0.5, rely=0.14, anchor="center")
-        self.value1_def_button = ctk.CTkButton(master=self, width=30, text="", fg_color = "transparent", 
-                                               image=self.info_img, command = lambda: self.definition(value1))
-        self.value1_def_button.place(relx = 0.9, rely=0.14, anchor="center")
+        self.value1_title.place(relx= 0.5, rely=0.12, anchor="center")
+        self.value1_definition = ctk.CTkLabel(master=self, text=value1.definition, font=self.font2)
+        self.value1_definition.place(relx= 0.5, rely=0.18, anchor="center")
         self.value1 = ctk.DoubleVar(value=0.5)
         self.value1_str = ctk.StringVar()
-        self.slider1 = ctk.CTkSlider(self, from_=0, to=1, number_of_steps=6, variable=self.value1)
+        self.slider1 = ctk.CTkSlider(self, width = 300, from_=0, to=1, number_of_steps=6, variable=self.value1)
         self.slider1_label = ctk.CTkLabel(self, textvariable=self.value1_str)
-        self.slider1.place(relx=0.5, rely=0.21, anchor="center")
-        self.slider1_label.place(relx=0.5, rely=0.275, anchor="center")
+        self.slider1.place(relx=0.5, rely=0.23, anchor="center")
+        self.slider1_label.place(relx=0.5, rely=0.28, anchor="center")
 
         self.value2_title = ctk.CTkLabel(master=self, text=value2.name_fr, font=self.font)
-        self.value2_title.place(relx= 0.5, rely=0.44, anchor="center")
-        self.value2_def_button = ctk.CTkButton(master=self, width=30, text="", fg_color = "transparent", 
-                                               image=self.info_img, command = lambda: self.definition(value2))
-        self.value2_def_button.place(relx = 0.9, rely=0.44, anchor="center")
+        self.value2_title.place(relx= 0.5, rely=0.42, anchor="center")
+        self.value2_definition = ctk.CTkLabel(master=self, text=value2.definition, font=self.font2)
+        self.value2_definition.place(relx= 0.5, rely=0.48, anchor="center")
         self.value2 = ctk.DoubleVar(value=0.5)
         self.value2_str = ctk.StringVar()
-        self.slider2 = ctk.CTkSlider(self, from_=0, to=1, number_of_steps=6, variable=self.value2)
+        self.slider2 = ctk.CTkSlider(self, width = 300, from_=0, to=1, number_of_steps=6, variable=self.value2)
         self.slider2_label = ctk.CTkLabel(self, textvariable=self.value2_str)
-        self.slider2.place(relx=0.5, rely=0.51, anchor="center")
-        self.slider2_label.place(relx=0.5, rely=0.575, anchor="center")
+        self.slider2.place(relx=0.5, rely=0.53, anchor="center")
+        self.slider2_label.place(relx=0.5, rely=0.58, anchor="center")
 
         self.value3_title = ctk.CTkLabel(master=self, text=value3.name_fr, font=self.font)
-        self.value3_title.place(relx= 0.5, rely=0.74, anchor="center")
-        self.value3_def_button = ctk.CTkButton(master=self, width=30, text="", fg_color = "transparent", 
-                                               image=self.info_img, command = lambda: self.definition(value3))
-        self.value3_def_button.place(relx = 0.9, rely=0.74, anchor="center")
+        self.value3_title.place(relx= 0.5, rely=0.72, anchor="center")
+        self.value3_definition = ctk.CTkLabel(master=self, text=value3.definition, font=self.font2)
+        self.value3_definition.place(relx= 0.5, rely=0.78, anchor="center")
         self.value3 = ctk.DoubleVar(value=0.5)
         self.value3_str = ctk.StringVar()
-        self.slider3 = ctk.CTkSlider(self, from_=0, to=1, number_of_steps=6, variable=self.value3)
+        self.slider3 = ctk.CTkSlider(self, width=300, from_=0, to=1, number_of_steps=6, variable=self.value3)
         self.slider3_label = ctk.CTkLabel(self, textvariable=self.value3_str)
-        self.slider3.place(relx=0.5, rely=0.81, anchor="center")
-        self.slider3_label.place(relx=0.5, rely=0.875, anchor="center")
+        self.slider3.place(relx=0.5, rely=0.83, anchor="center")
+        self.slider3_label.place(relx=0.5, rely=0.88, anchor="center")
 
         self.var_int_to_string()
         self.toplevel_window = None
-
-    def definition(self, value):
-        # CTkMessagebox(title="Définition", message=f"{value.definition}", icon="Images/info_empty.png")
-        if self.toplevel_window is None or not self.toplevel_window.winfo_exists():
-            self.toplevel_window = DefinitionWindow(value)  # create window if its None or destroyed
-            self.toplevel_window.grab_set()
-        else:
-            self.toplevel_window.focus()  # if window exists focus it
 
     def var_int_to_string(self):
         #Pour l'affichage du slider, il semble plus comprehensible d'utiliser des indicateurs textuels,
