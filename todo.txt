@@ -1,0 +1,11 @@
+en général
+- créer un event pour que entrée face next
+
+questionnaire
+- limiter le nombre de caractères ?
+
+menu:
+- ne pas laisser choisir qu'une valeur / ou adapter pour 
+- laisser choisir l'ordre de passage des apps
+
+
