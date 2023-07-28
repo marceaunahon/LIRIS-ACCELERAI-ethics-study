@@ -48,7 +48,7 @@ class MainFrame(ctk.CTkFrame):
         self.job_menu = ctk.CTkOptionMenu(self, values=["Agriculteurs exploitants", "Artisans, commerçants et chefs d'entreprise",
                                                         "Cadres et professions intellectuelles supérieures", "Professions intermédiaires",
                                                         "Employés", "Ouvriers", "Retraités",
-                                                        "Autres personnes sans activité professionelle"], variable=self.age)
+                                                        "Autres personnes sans activité professionelle"], variable=self.job)
         self.job_menu.place(relx=0.5, rely=0.2, anchor="center")
 
         self.number = ctk.StringVar(value="Faire un choix")

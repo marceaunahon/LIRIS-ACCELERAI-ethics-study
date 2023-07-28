@@ -10,16 +10,13 @@ ctk.set_default_color_theme("green")
 
 class SlidersGUI(ctk.CTk):
 
-    def __init__(self, all_values : List[Value], selected_values : List[Value]):
+    def __init__(self, values : List[Value]):
         super().__init__()
         self.iconbitmap('Images/liris.ico')
         self.title("Questionnaire valeurs")
         self.geometry("900x700")
 
-        self.values = all_values
-        self.selected_values = selected_values
-        if self.values == selected_values: self.all = True
-        else : self.all = False
+        self.values = values
 
         self.title_label = ctk.CTkLabel(self, text="Quelles valeurs sont importantes pour vous ?", font=ctk.CTkFont(size=22, weight="bold"))
         self.title_label.place(relx=0.5, rely=0.06, anchor="center")
@@ -137,5 +134,5 @@ class ValuesFrame(ctk.CTkFrame):
 
 if __name__ == "__main__":
     values, values_name_only, situation_list = read_values_and_situations("data/values.csv", "data/situations.csv")
-    app = SlidersGUI(values, values)
+    app = SlidersGUI(values)
     app.mainloop()

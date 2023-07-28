@@ -25,12 +25,7 @@ if menu.global_param[0] == 1:
     questionnaire.mainloop()
     profile = questionnaire.results
 if menu.global_param[1] == 1:
-    if menu.sliders_param == 0:
-        sliders = SlidersGUI(all_values=values, selected_values=values)
-        sliders.mainloop()
-        sliders_results = sliders.results
-    if menu.sliders_param == 1:
-        sliders = SlidersGUI(all_values=values, selected_values=menu.selected_values)
+        sliders = SlidersGUI(values)
         sliders.mainloop()
         sliders_results = sliders.results
 if menu.global_param[2] == 1:
