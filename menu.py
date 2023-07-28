@@ -58,8 +58,6 @@ class Menu(ctk.CTk):
         self.global_param[2] = self.experiment_frame.choice.get()
         self.global_param[3] = self.experiment_frame.acceptability.get()
 
-        self.sliders_param = self.experiment_frame.what_values.get()
-
         self.choice_param[0] = self.experiment_frame.use_diff.get()
         self.choice_param[1] = self.experiment_frame.use_rel.get()
         self.choice_param[2] = self.experiment_frame.disp_values.get()
@@ -81,6 +79,10 @@ class Menu(ctk.CTk):
             temp_situations = self.situation_list[0:30]
         if self.experiment_frame.number.get() == 3:
             temp_situations = self.situation_list[0:45]
+        if self.experiment_frame.number.get() == 3:
+            temp_situations = self.situation_list[0:60]
+        if self.experiment_frame.number.get() == 3:
+            temp_situations = self.situation_list[0:75]
         for situation in temp_situations:
             if situation.value1 in self.selected_values and situation.value2 in self.selected_values:
                 self.selected_situations.append(situation)
@@ -132,9 +134,6 @@ class ExperimentsFrame(ctk.CTkFrame):
         self.disp_values = ctk.IntVar()
         self.use_diff = ctk.IntVar()
         self.use_rel = ctk.IntVar()
-        self.what_values = ctk.IntVar(value=2)
-        self.sliders_b1 = ctk.CTkRadioButton(master=self, text="Valeurs choisies", variable=self.what_values, value=1)
-        self.sliders_b2 = ctk.CTkRadioButton(master=self, text="Toutes les valeurs", variable=self.what_values, value=0)
         self.choose_disp_values = ctk.CTkCheckBox(master=self, text="Montrer les valeurs", variable=self.disp_values)
         self.choose_use_diff = ctk.CTkCheckBox(master=self, text="Demander la difficulté", variable=self.use_diff)
         self.choose_use_rel = ctk.CTkCheckBox(master=self, text="Demander la pertinence", variable=self.use_rel)
@@ -143,26 +142,22 @@ class ExperimentsFrame(ctk.CTkFrame):
         #Placement des widgets
         self.choose_questionnaire.place(relx=0.15, rely=0.22, anchor="w")
         self.choose_sliders.place(relx=0.15, rely=0.3, anchor="w")
-        self.sliders_b1.place(relx=0.2, rely=0.36, anchor="w")
-        self.sliders_b2.place(relx=0.2, rely=0.42, anchor="w")
-        self.choose_choice.place(relx=0.15, rely=0.5, anchor="w")
-        self.choose_disp_values.place(relx=0.2, rely=0.56, anchor="w")
-        self.choose_use_diff.place(relx=0.2, rely=0.62, anchor="w")
-        self.choose_use_rel.place(relx=0.2, rely=0.68, anchor="w")
-        self.choose_acceptability.place(relx=0.15, rely=0.75, anchor="w")
+        self.choose_choice.place(relx=0.15, rely=0.38, anchor="w")
+        self.choose_disp_values.place(relx=0.2, rely=0.46, anchor="w")
+        self.choose_use_diff.place(relx=0.2, rely=0.52, anchor="w")
+        self.choose_use_rel.place(relx=0.2, rely=0.58, anchor="w")
+        self.choose_acceptability.place(relx=0.15, rely=0.66, anchor="w")
 
         #Dernier bouton: nombre de dilemmes par couple de valeurs
         self.number_label = ctk.CTkLabel(self, text="Nombre de situations", font=parent.font16)
-        self.number_label.place(relx=0.5, rely=0.83, anchor="center")
+        self.number_label.place(relx=0.5, rely=0.78, anchor="center")
         self.number_menu = ctk.CTkOptionMenu(self, values=["1", "2", "3", "4", "5"], variable=self.number)
-        self.number_menu.place(relx=0.5, rely=0.9, anchor="center")
+        self.number_menu.place(relx=0.5, rely=0.84, anchor="center")
 
         #Configuration des widgets initialement grisés
         self.choose_disp_values.configure(state="disabled")
         self.choose_use_diff.configure(state="disabled")
         self.choose_use_rel.configure(state="disabled")
-        self.sliders_b1.configure(state="disabled")
-        self.sliders_b2.configure(state="disabled")
         self.number_menu.configure(state="disabled")
         self.number.set(0)
 
@@ -186,17 +181,6 @@ class ExperimentsFrame(ctk.CTkFrame):
             self.choose_use_rel.configure(state="normal")
             self.use_diff.set(1)
             self.use_rel.set(1)
-        if self.choose_sliders.get() == 0:
-            self.sliders_b1.configure(state="disabled")
-            self.sliders_b2.configure(state="disabled")
-            self.what_values.set(2)
-        if self.choose_sliders.get() == 1:
-            self.sliders_b1.configure(state="normal")
-            self.sliders_b2.configure(state="normal")
-            self.what_values.set(1)
-
-
-
 
 class ValuesFrame(ctk.CTkFrame):
 

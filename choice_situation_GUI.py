@@ -174,7 +174,11 @@ class OptionFrame1(ctk.CTkFrame):
         super().__init__(master = parent, border_color="#C0C0C0", border_width = 5)
         self.button = ctk.CTkRadioButton(master=self, text = "Choisir cette option", variable=parent.choice,
                                         value=0, command=parent.change_color)
-        self.place(relx=_relx, rely=_rely, relwidth = _relwidth, relheight = _relheight, anchor="center")
+        self.x = _relx
+        self.y = _rely
+        self.w = _relwidth
+        self.h = _relheight
+        self.place(relx=self.x, rely=self.y, relwidth = self.w, relheight = self.h, anchor="center")
         self.textbox = TextBoxOption1(parent= self, GUI = parent,
                                _relx=0.5, _rely=0.79, _relwidth = 0.95, _relheight=0.23)
         self.image_canvas = ImageCanvas1(parent = self, GUI = parent)
@@ -184,12 +188,14 @@ class OptionFrame1(ctk.CTkFrame):
         self.button.place(relx = 0.5, rely = 0.945, anchor="center")
 
     def reset_option_frame(self, GUI : ChoiceSituationGUI):
+        self.place_forget()
         GUI.change_color()
         GUI.choice.set(0)
         self.textbox.reset_text(GUI)
         self.image_canvas.reset(GUI)
-        if GUI.disp_values :
+        if GUI.disp_values:
             self.adapt_text(GUI)
+        self.place(relx=self.x, rely=self.y, relwidth = self.w, relheight = self.h, anchor="center")
     
     def adapt_text(self, GUI : ChoiceSituationGUI):
         self.button.configure(text=f"Prioriser la valeur {GUI.situation.value1}")
@@ -200,7 +206,11 @@ class OptionFrame2(ctk.CTkFrame):
         super().__init__(master = parent, border_color="#C0C0C0", border_width = 5)
         self.button = ctk.CTkRadioButton(master=self, text = "Choisir cette option", variable=parent.choice,
                                         value=1, command=parent.change_color)
-        self.place(relx=_relx, rely=_rely, relwidth = _relwidth, relheight = _relheight, anchor="center")
+        self.x = _relx
+        self.y = _rely
+        self.w = _relwidth
+        self.h = _relheight
+        self.place(relx=self.x, rely=self.y, relwidth = self.w, relheight = self.h, anchor="center")
         self.textbox = TextBoxOption2(parent= self, GUI = parent,
                                _relx=0.5, _rely=0.79, _relwidth = 0.95, _relheight=0.23)
         self.image_canvas = ImageCanvas2(parent = self, GUI = parent)
@@ -210,12 +220,14 @@ class OptionFrame2(ctk.CTkFrame):
         self.button.place(relx = 0.5, rely = 0.945, anchor="center")
 
     def reset_option_frame(self, GUI : ChoiceSituationGUI):
+        self.place_forget()
         GUI.change_color()
         GUI.choice.set(0)
         self.textbox.reset_text(GUI)
         self.image_canvas.reset(GUI)
         if GUI.disp_values:
             self.adapt_text(GUI)
+        self.place(relx=self.x, rely=self.y, relwidth = self.w, relheight = self.h, anchor="center")
 
     def adapt_text(self, GUI : ChoiceSituationGUI):
         self.button.configure(text=f"Prioriser la valeur {GUI.situation.value2}")
@@ -309,17 +321,23 @@ class TextBoxStatement(ctk.CTkTextbox):
         font = ctk.CTkFont(family='Calibri', size = 20)
         super().__init__(master=parent, wrap="word", font=font, 
                         border_color="#33AE81")
-        self.place(relx=_relx, rely=_rely, relwidth = _relwidth, relheight = _relheight, anchor="center")
+        self.x = _relx
+        self.y = _rely
+        self.w = _relwidth
+        self.h = _relheight
+        self.place(relx=self.x, rely=self.y, relwidth = self.w, relheight = self.h, anchor="center")
         self.adapt_text(GUI) ##on affiche les valeurs si disp_values = True
         self.insert("0.0", self.text) #on y insère l'énoncé de la situation
         self.configure(state='disabled') #on rend le texte accessible seulement en lecture
 
     def reset_text(self, GUI : ChoiceSituationGUI):
+        self.place_forget()
         self.adapt_text(GUI) #on affiche les valeurs si disp_values = True
         self.configure(state="normal") #on rend la textbox modifiable
         self.delete("0.0", "end") #on efface l'énoncé précédent
         self.insert("0.0",self.text) #on insère le nouvel énoncé
         self.configure(state="disabled") #on repasse la textbox en état non modifiable
+        self.place(relx=self.x, rely=self.y, relwidth = self.w, relheight = self.h, anchor="center")
         
     def adapt_text(self, GUI : ChoiceSituationGUI):
         self.text = GUI.situation.choice_statement

@@ -24,13 +24,10 @@ class AcceptabilityGUI(GeneralGUI):
 
         #Creation des listes
         self.acceptabilities = np.zeros(len(situation_list))
-        self.value_changes = np.zeros(len(situation_list))
-        self.results = np.zeros((len(situation_list), 2))
 
         #Création des variables
-        self.acceptability = ctk.IntVar(value=1)
-        self.value_change = ctk.IntVar(value=2)
-        self.value_change_str = ctk.StringVar()
+        self.acceptability = ctk.IntVar(value=2)
+        self.acceptability_str = ctk.StringVar()
 
         #Options
         self.disp_values = disp_values
@@ -41,26 +38,22 @@ class AcceptabilityGUI(GeneralGUI):
         self.var_int_to_string() #affiche les variables des sliders en texte pour une meilleure compréhension de l'utilisateur
 
     def save(self):
-        #self.acceptabilities[self.situation_count] = self.acceptability.get()
-        self.value_changes[self.situation_count] = self.value_change.get()
-
-        #self.results[self.situation_count][0] = self.acceptabilities[self.situation_count]
-        self.results[self.situation_count] = self.value_changes[self.situation_count]
+        self.acceptabilities[self.situation_count] = self.acceptability.get()
 
 
     def var_int_to_string(self):
         #Pour l'affichage du slider, il semble plus comprehensible d'utiliser des indicateurs textuels,
         #plutot que les valeurs initiales comprises entre 0 et 1
-        if self.value_change.get() == 0:
-            self.value_change_str.set("Très satisfaisante, il ne faut pas intervenir")
-        if self.value_change.get() == 1:
-            self.value_change_str.set("Acceptable, pas besoin d'intervenir")
-        if self.value_change.get() == 2:
-            self.value_change_str.set("Difficile à juger, une intervention pourrait se justifer")
-        if self.value_change.get() == 3:
-            self.value_change_str.set("Pas satisfaisante, ce serait mieux d'intervenir")
-        if self.value_change.get() == 4:
-            self.value_change_str.set("Pas acceptable, il faut intervenir")
+        if self.acceptability.get() == 0:
+            self.acceptability_str.set("Très satisfaisante, il ne faut pas intervenir")
+        if self.acceptability.get() == 1:
+            self.acceptability_str.set("Acceptable, pas besoin d'intervenir")
+        if self.acceptability.get() == 2:
+            self.acceptability_str.set("Difficile à juger, une intervention pourrait se justifer")
+        if self.acceptability.get() == 3:
+            self.acceptability_str.set("Pas satisfaisante, ce serait mieux d'intervenir")
+        if self.acceptability.get() == 4:
+            self.acceptability_str.set("Pas acceptable, il faut intervenir")
 
         self.after(200, self.var_int_to_string)
 
@@ -160,22 +153,13 @@ class EvalFrame(ctk.CTkFrame):
 
         self.slider_label = ctk.CTkLabel(master=self, text="La décision du système est :", font=self.font2)
         self.slider_label.place(relx=0.5, rely = 0.5, anchor="center")
-        self.slider = ctk.CTkSlider(self, from_=0, to=4, number_of_steps=4, variable=GUI.value_change)
+        self.slider = ctk.CTkSlider(self, from_=0, to=4, number_of_steps=4, variable=GUI.acceptability)
         self.slider.place(relx=0.5, rely=0.65, anchor="center")
-        self.variable_label = ctk.CTkLabel(master=self, textvariable=GUI.value_change_str, font=self.font2)
+        self.variable_label = ctk.CTkLabel(master=self, textvariable=GUI.acceptability_str, font=self.font2)
         self.variable_label.place(relx=0.5, rely = 0.8, anchor="center")
 
-    def change_slider_state(self, GUI : AcceptabilityGUI):
-        if GUI.acceptability.get() == 0:
-            self.slider.configure(button_color="#33AE81", state="normal")
-        if GUI.acceptability.get() == 1:
-            self.slider.configure(button_color="#C0C0C0", state="disabled")
-            self.slider.set(0)
-
     def reset(self, GUI : AcceptabilityGUI):
-        #self.slider.configure(button_color="#C0C0C0", state="disabled")
-        self.slider.set(0)
-        GUI.acceptability.set(1)
+        GUI.acceptability.set(2)
 
 class SaveFrame(ctk.CTkFrame):
     def __init__(self, parent : ctk.CTkFrame, GUI : AcceptabilityGUI):

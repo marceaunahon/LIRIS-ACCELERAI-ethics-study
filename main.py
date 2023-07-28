@@ -42,8 +42,7 @@ if menu.global_param[2] == 1:
 if menu.global_param[3] == 1:
     acceptability_GUI = AcceptabilityGUI(menu.selected_situations) #voir pour disp values
     acceptability_GUI.mainloop()
-    acceptability_results_matrix = acceptability_GUI.results
-    acceptability_results_list = acceptability_results_matrix.tolist()
+    acceptability_results = acceptability_GUI.acceptabilities
 
 user = User(menu = menu.list,
             profile = profile, 

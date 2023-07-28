@@ -21,8 +21,8 @@ class SlidersGUI(ctk.CTk):
         if self.values == selected_values: self.all = True
         else : self.all = False
 
-        self.title_label = ctk.CTkLabel(self, text="Quelles valeurs sont importantes pour vous ?", font=ctk.CTkFont(size=20, weight="bold"))
-        self.title_label.place(relx=0.5, rely=0.05, anchor="center")
+        self.title_label = ctk.CTkLabel(self, text="Quelles valeurs sont importantes pour vous ?", font=ctk.CTkFont(size=22, weight="bold"))
+        self.title_label.place(relx=0.5, rely=0.06, anchor="center")
         self.first_frame = ValuesFrame(self, 0.25, 0.5, self.values[0], self.values[1], self.values[2])
         self.second_frame = ValuesFrame(self, 0.75, 0.5, self.values[3], self.values[4], self.values[5])
         self.button = ctk.CTkButton(self, text="Confirmer", command=self.save)
