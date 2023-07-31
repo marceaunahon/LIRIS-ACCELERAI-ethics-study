@@ -1,6 +1,6 @@
 # How it works
 
-- In order to launch the app, you have to run the menu.py file. It will then launch a Menu instance, i.e. a GUI that we ask you what application you want to launch, and to select params. There are four applications:
+- In order to launch the app, you have to run the menu.py file. It will then launch a Menu instance, i.e. a GUI that asks you what application you want to launch, and to select params. There are four applications:
     - **Questionnaire** (*Questionnaire utilisateur*): an user questionnaire that allows to gather data about user profile
     - **SlidersGUI** (*Questionnaire valeurs*): presents all the values to the user and asks them to quantify their importance thanks to sliders
     - **ChoiceSituationGUI** (*Choix en situation*): presents a situation and two options, the user must choose one the two possibilites
