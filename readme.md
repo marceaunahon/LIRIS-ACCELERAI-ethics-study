@@ -1,4 +1,4 @@
-# How it works:
+# How it works
 
 - In order to launch the app, you have to run the menu.py file. It will then launch a Menu instance, i.e. a GUI that we ask you what application you want to launch, and to select params. There are four applications:
     - **Questionnaire** (*Questionnaire utilisateur*): an user questionnaire that allows to gather data about user profile
@@ -13,7 +13,7 @@
 - The results and data processing are in the nooteboks
 
 
-# Modules:
+# Modules
 
 - The applications are implemented with the module **customtkinter** (ctk), an extension of the module **tkinter**, you can find information on the following two links:
     - https://github.com/TomSchimansky/CustomTkinter
@@ -27,7 +27,7 @@
     - **abc** and the class **ABC** and function **abstractmethod** to create an abstract class
 
 
-# Architecture:
+# Architecture
 
 - Two .csv input files:
     - **values.csv**: contains all the values in the following format: Name;Name_fr;Definition_fr
