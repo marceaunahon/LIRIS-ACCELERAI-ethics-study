@@ -40,8 +40,8 @@
 
 - Six apps .py files :
     - **general_GUI.py**: contains the abstract GUI class GeneralGUI
-        - choice_situations_GUI.py: contains the GUI class ChoiceSituationGUI that inherites from GeneralGUI
-        - acceptability_GUI.py: contains the GUI class AcceptabilityGUI that inherites from GeneralGUI
+        - **choice_situations_GUI.py**: contains the GUI class ChoiceSituationGUI that inherites from GeneralGUI
+        - **acceptability_GUI.py**: contains the GUI class AcceptabilityGUI that inherites from GeneralGUI
     - **questionnaire.py**: contains the GUI class Questionnaire
     - **sliders_GUI.py**: contains the GUI class SlidersGUI
     - **menu.py**: contains the GUI class Menu, enable to choose what application to launch
