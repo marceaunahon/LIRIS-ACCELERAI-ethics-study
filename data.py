@@ -1,6 +1,4 @@
-import csv
 import pandas as pd
-import numpy as np
 from typing import List
 from value import Value
 from situation import ChoiceSituation

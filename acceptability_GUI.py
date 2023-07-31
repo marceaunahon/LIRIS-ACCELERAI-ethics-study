@@ -4,7 +4,6 @@ from data import read_values_and_situations, store
 from situation import ChoiceSituation
 from PIL import Image
 from typing import List
-from CTkMessagebox import CTkMessagebox
 from general_GUI import GeneralGUI
 
 ctk.set_appearance_mode("System")
