@@ -7,7 +7,10 @@ from acceptability_GUI import AcceptabilityGUI
 from user import User
 import numpy as np
 from data import Value, ChoiceSituation
+import customtkinter as ctk
 
+ctk.set_appearance_mode("System")
+ctk.set_default_color_theme("green")
 
 values, values_name_only, situation_list = read_values_and_situations("data/values.csv", "data/situations.csv")
 menu = Menu(values, values_name_only, situation_list)

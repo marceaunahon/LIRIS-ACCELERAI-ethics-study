@@ -26,7 +26,7 @@ class AcceptabilityGUI(GeneralGUI):
         self.acceptabilities = np.zeros(len(situation_list))
 
         #Création des variables
-        self.acceptability = ctk.IntVar(value=2)
+        self.acceptability = ctk.DoubleVar(value=0.5)
         self.acceptability_str = ctk.StringVar()
 
         #Options
@@ -46,13 +46,13 @@ class AcceptabilityGUI(GeneralGUI):
         #plutot que les valeurs initiales comprises entre 0 et 1
         if self.acceptability.get() == 0:
             self.acceptability_str.set("Très satisfaisante, il ne faut pas intervenir")
-        if self.acceptability.get() == 1:
+        if self.acceptability.get() == 0.25:
             self.acceptability_str.set("Acceptable, pas besoin d'intervenir")
-        if self.acceptability.get() == 2:
+        if self.acceptability.get() == 0.5:
             self.acceptability_str.set("Difficile à juger, une intervention pourrait se justifer")
-        if self.acceptability.get() == 3:
+        if self.acceptability.get() == 0.75:
             self.acceptability_str.set("Pas satisfaisante, ce serait mieux d'intervenir")
-        if self.acceptability.get() == 4:
+        if self.acceptability.get() == 1:
             self.acceptability_str.set("Pas acceptable, il faut intervenir")
 
         self.after(200, self.var_int_to_string)
@@ -153,13 +153,13 @@ class EvalFrame(ctk.CTkFrame):
 
         self.slider_label = ctk.CTkLabel(master=self, text="La décision du système est :", font=self.font2)
         self.slider_label.place(relx=0.5, rely = 0.5, anchor="center")
-        self.slider = ctk.CTkSlider(self, from_=0, to=4, number_of_steps=4, variable=GUI.acceptability)
+        self.slider = ctk.CTkSlider(self, from_=0, to=1, number_of_steps=4, variable=GUI.acceptability)
         self.slider.place(relx=0.5, rely=0.65, anchor="center")
         self.variable_label = ctk.CTkLabel(master=self, textvariable=GUI.acceptability_str, font=self.font2)
         self.variable_label.place(relx=0.5, rely = 0.8, anchor="center")
 
     def reset(self, GUI : AcceptabilityGUI):
-        GUI.acceptability.set(2)
+        GUI.acceptability.set(0.5)
 
 class SaveFrame(ctk.CTkFrame):
     def __init__(self, parent : ctk.CTkFrame, GUI : AcceptabilityGUI):

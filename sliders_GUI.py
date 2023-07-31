@@ -46,7 +46,7 @@ class ValuesFrame(ctk.CTkFrame):
 
         self.value1_title = ctk.CTkLabel(master=self, text=value1.name_fr, font=self.font)
         self.value1_title.place(relx= 0.5, rely=0.12, anchor="center")
-        self.value1_definition = ctk.CTkLabel(master=self, text=value1.definition, font=self.font2)
+        self.value1_definition = ctk.CTkLabel(master=self, text=value1.definition_fr, font=self.font2)
         self.value1_definition.place(relx= 0.5, rely=0.18, anchor="center")
         self.value1 = ctk.DoubleVar(value=0.5)
         self.value1_str = ctk.StringVar()
@@ -57,7 +57,7 @@ class ValuesFrame(ctk.CTkFrame):
 
         self.value2_title = ctk.CTkLabel(master=self, text=value2.name_fr, font=self.font)
         self.value2_title.place(relx= 0.5, rely=0.42, anchor="center")
-        self.value2_definition = ctk.CTkLabel(master=self, text=value2.definition, font=self.font2)
+        self.value2_definition = ctk.CTkLabel(master=self, text=value2.definition_fr, font=self.font2)
         self.value2_definition.place(relx= 0.5, rely=0.48, anchor="center")
         self.value2 = ctk.DoubleVar(value=0.5)
         self.value2_str = ctk.StringVar()
@@ -68,7 +68,7 @@ class ValuesFrame(ctk.CTkFrame):
 
         self.value3_title = ctk.CTkLabel(master=self, text=value3.name_fr, font=self.font)
         self.value3_title.place(relx= 0.5, rely=0.72, anchor="center")
-        self.value3_definition = ctk.CTkLabel(master=self, text=value3.definition, font=self.font2)
+        self.value3_definition = ctk.CTkLabel(master=self, text=value3.definition_fr, font=self.font2)
         self.value3_definition.place(relx= 0.5, rely=0.78, anchor="center")
         self.value3 = ctk.DoubleVar(value=0.5)
         self.value3_str = ctk.StringVar()

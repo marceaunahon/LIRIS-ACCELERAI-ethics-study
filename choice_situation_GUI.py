@@ -13,7 +13,7 @@ ctk.set_default_color_theme("green")
 class ChoiceSituationGUI(GeneralGUI):
 
     def __init__(self, situation_list: List[ChoiceSituation], title : str = "GUI", 
-                 size : List[int] = [1200,700], use_difficulty = True, use_relevance = True,
+                 size : List[int] = [1200,750], use_difficulty = True, use_relevance = True,
                  disp_values = False):
         #disp_values = False : les valeurs sont cachées (état par défaut)
         #disp_values = True : les valeurs sont affichées
@@ -43,17 +43,17 @@ class ChoiceSituationGUI(GeneralGUI):
 
         #Création des variables
         self.choice = ctk.IntVar() #choix fait par l'utilisateur
-        self.difficulty = ctk.DoubleVar(value=2) #difficulté de prise de décision
+        self.difficulty = ctk.DoubleVar(value=0.5) #difficulté de prise de décision
         self.difficulty_str = ctk.StringVar() #difficulté affichée en texte pour une meilleure compréhension de l'utilisateur
-        self.relevance = ctk.DoubleVar(value=2) #pertinence de la situation
+        self.relevance = ctk.DoubleVar(value=0.5) #pertinence de la situation
         self.relevance_str = ctk.StringVar() #pertinence affichée en texte pour une meilleure compréhension de l'utilisateur
         self.progress = ctk.StringVar()
         self.progress.set(f"1/{len(self.situation_list)}")
 
         #Création de l'interface
         if self.use_relevance or self.use_difficulty:
-            self.upper_frame = UpperFrame(parent = self, _relx=0.5, _rely=0.1, _relwidth=1, 
-                                         _relheight=0.2)
+            self.upper_frame = UpperFrame(parent = self, _relx=0.5, _rely=0.0925, _relwidth=1, 
+                                         _relheight=0.25)
             self.option1_frame = OptionFrame1(parent = self, _relx=0.28, _rely=0.46, _relwidth=0.4, 
                                             _relheight=0.55)
             self.option2_frame = OptionFrame2(parent = self, _relx=0.72, _rely=0.46, _relwidth=0.4, 
@@ -126,24 +126,24 @@ class ChoiceSituationGUI(GeneralGUI):
 
         if self.difficulty.get() == 0.:
             self.difficulty_str.set("Très facile de choisir")
-        if self.difficulty.get() == 1.:
+        if self.difficulty.get() == 0.25:
             self.difficulty_str.set("Facile de choisir")
-        if self.difficulty.get() == 2.:
+        if self.difficulty.get() == 0.5:
             self.difficulty_str.set("Difficulté modérée")
-        if self.difficulty.get() == 3.:
+        if self.difficulty.get() == 0.75:
             self.difficulty_str.set("Difficile de choisir")
-        if self.difficulty.get() == 4.:
+        if self.difficulty.get() == 1.:
             self.difficulty_str.set("Très difficile de choisir")
 
         if self.relevance.get() == 0.:
             self.relevance_str.set("Très peu pertinent")
-        if self.relevance.get() == 1.:
+        if self.relevance.get() == 0.25:
             self.relevance_str.set("Peu pertinent")
-        if self.relevance.get() == 2.:
+        if self.relevance.get() == 0.5:
             self.relevance_str.set("Pertinence modérée")
-        if self.relevance.get() == 3.:
+        if self.relevance.get() == 0.75:
             self.relevance_str.set("Pertinent")
-        if self.relevance.get() == 4.:
+        if self.relevance.get() == 1.:
             self.relevance_str.set("Très pertinent pertinent")
         #On appelle la fonction tous les 200ms
         self.after(200, self.var_int_to_string)
@@ -180,7 +180,7 @@ class OptionFrame1(ctk.CTkFrame):
         self.h = _relheight
         self.place(relx=self.x, rely=self.y, relwidth = self.w, relheight = self.h, anchor="center")
         self.textbox = TextBoxOption1(parent= self, GUI = parent,
-                               _relx=0.5, _rely=0.79, _relwidth = 0.95, _relheight=0.23)
+                               _relx=0.5, _rely=0.775, _relwidth = 0.95, _relheight=0.23)
         self.image_canvas = ImageCanvas1(parent = self, GUI = parent)
         self.image_canvas.place(relx=0.5, rely=0.34, relwidth = 0.58, relheight=0.58, anchor="center")
         if parent.disp_values :
@@ -212,7 +212,7 @@ class OptionFrame2(ctk.CTkFrame):
         self.h = _relheight
         self.place(relx=self.x, rely=self.y, relwidth = self.w, relheight = self.h, anchor="center")
         self.textbox = TextBoxOption2(parent= self, GUI = parent,
-                               _relx=0.5, _rely=0.79, _relwidth = 0.95, _relheight=0.23)
+                               _relx=0.5, _rely=0.775, _relwidth = 0.95, _relheight=0.23)
         self.image_canvas = ImageCanvas2(parent = self, GUI = parent)
         self.image_canvas.place(relx=0.5, rely=0.34, relwidth = 0.58, relheight=0.58, anchor="center")
         if parent.disp_values :
@@ -242,10 +242,10 @@ class EvalFrame(ctk.CTkFrame):
 
         #Boutons et sliders utilisés en configuration de base
         self.label_difficulty = ctk.CTkLabel(master=self, text="Difficulté de décision", font=self.font)
-        self.diff_slider = ctk.CTkSlider(self, from_=0, to=4, number_of_steps=4, variable = GUI.difficulty)
+        self.diff_slider = ctk.CTkSlider(self, from_=0, to=1, number_of_steps=4, variable = GUI.difficulty)
         self.diff_label = ctk.CTkLabel(self, textvariable=GUI.difficulty_str)
         self.label_relevance = ctk.CTkLabel(master=self, text="Pertinence de la situation", font=self.font)
-        self.rel_slider = ctk.CTkSlider(self, from_=0, to=4, number_of_steps=4, variable = GUI.relevance)
+        self.rel_slider = ctk.CTkSlider(self, from_=0, to=1, number_of_steps=4, variable = GUI.relevance)
         self.rel_label = ctk.CTkLabel(master=self, textvariable=GUI.relevance_str)
 
         if GUI.use_difficulty and GUI.use_relevance :
@@ -268,14 +268,14 @@ class EvalFrame(ctk.CTkFrame):
             self.rel_label.place(relx=0.5, rely=0.75, anchor="center")
 
     def reset(self, GUI : ChoiceSituationGUI):
-        GUI.difficulty.set(2)
-        GUI.relevance.set(2)
+        GUI.difficulty.set(0.5)
+        GUI.relevance.set(0.5)
 
 class TextBoxOption1(ctk.CTkTextbox):
 
     def __init__(self, parent : OptionFrame1, GUI : ChoiceSituationGUI, _relx,_rely,_relwidth,_relheight):
         #On construit la textbox
-        font = ctk.CTkFont(family='Calibri', size = 20)
+        font = ctk.CTkFont(family='Calibri', size = 22)
         super().__init__(master=parent, wrap="word", font=font, border_color="#33AE81")
         self.place(relx=_relx, rely=_rely, relwidth = _relwidth, relheight = _relheight, anchor="center")
         self.adapt_text(GUI) ##on affiche les valeurs si disp_values = True
@@ -296,7 +296,7 @@ class TextBoxOption2(ctk.CTkTextbox):
 
     def __init__(self, parent : OptionFrame2, GUI : ChoiceSituationGUI, _relx,_rely,_relwidth,_relheight):
         #On construit la textbox
-        font = ctk.CTkFont(family='Calibri', size = 20)
+        font = ctk.CTkFont(family='Calibri', size = 22)
         super().__init__(master=parent, wrap="word", font=font, 
                         border_color="#33AE81")
         self.place(relx=_relx, rely=_rely, relwidth = _relwidth, relheight = _relheight, anchor="center")
@@ -318,7 +318,7 @@ class TextBoxStatement(ctk.CTkTextbox):
 
     def __init__(self, parent : UpperFrame, GUI : ChoiceSituationGUI, _relx,_rely,_relwidth,_relheight):
         #On construit la textbox
-        font = ctk.CTkFont(family='Calibri', size = 20)
+        font = ctk.CTkFont(family='Calibri', size = 22)
         super().__init__(master=parent, wrap="word", font=font, 
                         border_color="#33AE81")
         self.x = _relx
@@ -384,6 +384,6 @@ class SaveFrame(ctk.CTkFrame):
         self.back.place(relx = 0.25, rely=0.5, anchor="center")
 
 if __name__ == "__main__" : 
-    values, values_name_only, situation_list = read_values_and_situations("data/values.csv", "data/situations2.csv")
+    values, values_name_only, situation_list = read_values_and_situations("data/values.csv", "data/situations.csv")
     interface = ChoiceSituationGUI(situation_list, use_difficulty=True, use_relevance=True, disp_values=False)
     interface.mainloop()
