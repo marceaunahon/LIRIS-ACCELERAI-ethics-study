@@ -1,12 +1,10 @@
-from data import read_values_and_situations, store
+from data import read_values_and_situations
 from menu import Menu
 from questionnaire import Questionnaire
 from sliders_GUI import SlidersGUI
 from choice_situation_GUI import ChoiceSituationGUI
 from acceptability_GUI import AcceptabilityGUI
 from user import User
-import numpy as np
-from data import Value, ChoiceSituation
 import customtkinter as ctk
 
 ctk.set_appearance_mode("System")

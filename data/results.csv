@@ -1,239 +1,4 @@
-f2cc18ee-a3f2-4f69-b96e-36a8012de4d4,Fri Jul 21 11:10:29 2023,,,,
-
-b56f90dd-d52f-4653-a26c-f53bb7404377,Fri Jul 21 11:14:50 2023,"[array([1., 1., 1., 1., 0., 0., 0., 0., 0.]), array([1., 1., 0., 2.]), [<situation.ChoiceSituation object at 0x000001664258FD68>, <situation.ChoiceSituation object at 0x000001664258FB38>, <situation.ChoiceSituation object at 0x000001664258FDD8>, <situation.ChoiceSituation object at 0x00000166425C3208>, <situation.ChoiceSituation object at 0x00000166425C3240>, <situation.ChoiceSituation object at 0x00000166425C32B0>], [<value.Value object at 0x00000166425836D8>, <value.Value object at 0x0000016637FF4AC8>, <value.Value object at 0x00000166425837F0>]]",[0. 0. 0. 0. 0. 0. 0.],"[0.33333333 0.83333333 0.83333333 0.83333333 0.5        0.33333333
- 0.        ]",[],[]
-
-acea2af4-2319-4452-9938-c7b995ca7022,Fri Jul 21 11:21:04 2023,"[array([0., 0., 0., 0., 0., 0., 0., 0., 0.]), array([0., 0., 0., 0.]), array([], dtype=float64), array([], dtype=float64)]",[],[],[],[]
-
-556c97ac-8d56-49fc-ae6c-7cc428439835,Fri Jul 21 11:21:07 2023,"[array([0., 0., 0., 0., 0., 0., 0., 0., 0.]), array([0., 0., 0., 0.]), array([], dtype=float64), array([], dtype=float64)]",[],[],[],[]
-
-e53e80a5-6cc1-4fab-895d-f20cda703c02,Fri Jul 21 11:21:10 2023,"[array([0., 0., 0., 0., 0., 0., 0., 0., 0.]), array([0., 0., 0., 0.]), array([], dtype=float64), array([], dtype=float64)]",[],[],[],[]
-
-95c87eec-26db-4d49-a2d8-10d023376007,Fri Jul 21 11:25:21 2023,"[array([1., 1., 1., 1., 0., 0., 0., 0., 0.]), array([1., 1., 0., 1.]), array(['1:Privacy/Well-being',
-       '2:Inclusiveness/Environmental sustainability',
-       '3:Inclusiveness/Well-being', '4:Privacy/Inclusiveness',
-       '5:Environmental sustainability/Well-being',
-       '6:Privacy/Environmental sustainability',
-       '7:Security of supply/Environmental sustainability',
-       '8:Affordability/Privacy', '9:Autonomy/Inclusiveness',
-       '10:Security of supply/Well-being', '11:Well-being/Affordability',
-       '12:Autonomy/Environmental sustainability',
-       '13:Security of supply/Privacy',
-       '14:Affordability/Environmental sustainability',
-       '15:Autonomy/Privacy', '16:Security of supply/Inclusiveness',
-       '17:Inclusiveness/Affordability', '18:Autonomy/Well-being',
-       '19:Security of supply/Autonomy', '20:Affordability/Autonomy',
-       '21:Affordability/Security of supply'], dtype=object), array(['Inclusiveness', 'Well-being', 'Environmental sustainability',
-       'Privacy', 'Autonomy', 'Security of supply', 'Affordability'],
-      dtype=object)]",[0. 0. 0. 0. 0. 0. 0.],"[0.66666667 0.5        0.5        0.66666667 0.33333333 0.66666667
- 0.83333333]",[],[]
-
-65336457-a51a-4151-842c-72d90fe41897,Fri Jul 21 11:26:21 2023,"[array([0., 0., 0., 0., 0., 0., 0., 0., 0.]), array([0., 0., 0., 0.]), array([], dtype=object), array([], dtype=object)]",[],[],[],[]
-
-89d8a069-c079-401d-acef-6cb6f58c0ea4,Fri Jul 21 11:26:43 2023,"[array([1., 0., 0., 0., 0., 0., 0., 0., 0.]), array([0., 0., 0., 0.]), array([], dtype=object), array([], dtype=object)]",[0. 0. 0. 0. 0. 0. 0.],[],[],[]
-
-5f9d212e-2aa0-4b19-a483-52f8c85588e6,Fri Jul 21 11:28:41 2023,"[array([1., 0., 0., 0., 0., 0., 0., 0., 0.]), array([0., 0., 0., 0.]), array([], dtype=object), array([], dtype=object)]",['' '' '' '' '' '' ''],[],[],[]
-
-9606da92-f75e-4e7b-bbb8-0e4f4b08a07c,Fri Jul 21 11:50:13 2023,"[array([0., 0., 1., 0., 0., 0., 0., 0., 0.]), array([1., 1., 0., 1.]), array(['3:Inclusiveness/Well-being'], dtype=object), array(['Inclusiveness', 'Well-being'], dtype=object)]",[],[],[],[]
-
-98eec8a5-926d-452e-8dfb-4eeb1ebc8178,Fri Jul 21 11:50:47 2023,"[array([0., 0., 1., 0., 0., 0., 0., 0., 0.]), array([1., 1., 0., 1.]), array(['3:Inclusiveness/Well-being'], dtype=object), array(['Inclusiveness', 'Well-being'], dtype=object)]",[],[],[],[]
-
-a44bc5f3-c081-4c65-a1b1-a1b17d9f74a2,Fri Jul 21 11:51:37 2023,"[array([0., 0., 1., 0., 0., 0., 0., 0., 0.]), array([1., 1., 0., 1.]), array(['3:Inclusiveness/Well-being'], dtype=object), array(['Inclusiveness', 'Well-being'], dtype=object)]",[],[],[],[]
-
-8ce2f5d2-c9c6-41a5-af62-b0ed081fdc07,Fri Jul 21 11:52:29 2023,"[array([0., 0., 1., 0., 0., 0., 0., 0., 0.]), array([1., 1., 0., 1.]), array(['3:Inclusiveness/Well-being'], dtype=object), array(['Inclusiveness', 'Well-being'], dtype=object)]",[],[],[],[]
-
-b4a1f69a-ab22-4514-9252-ac116813b214,Fri Jul 21 11:55:19 2023,"[array([0., 0., 1., 0., 0., 0., 0., 0., 0.]), array([1., 1., 0., 1.]), array(['3:Inclusiveness/Well-being'], dtype=object), array(['Inclusiveness', 'Well-being'], dtype=object)]",[],[],"[[3.0, 0.0, 3.0, 2.0]]",[]
-
-dc494135-ca70-4dad-8f20-495be3220ba7,Fri Jul 21 11:56:22 2023,"[array([1., 1., 1., 1., 0., 0., 0., 0., 0.]), array([1., 1., 0., 2.]), array(['2:Inclusiveness/Environmental sustainability',
-       '3:Inclusiveness/Well-being',
-       '5:Environmental sustainability/Well-being',
-       '23:Inclusiveness/Environmental sustainability',
-       '24:Inclusiveness/Well-being',
-       '26:Environmental sustainability/Well-being'], dtype=object), array(['Inclusiveness', 'Well-being', 'Environmental sustainability'],
-      dtype=object)]",['0' 'Oui' 'Oui' 'Oui' 'Oui' 'Principale' '\n'],"[0.66666667 0.66666667 0.16666667 0.5        0.33333333 0.5
- 0.33333333]","[[2.0, 0.0, 3.0, 2.0], [3.0, 1.0, 0.0, 2.0], [5.0, 0.0, 3.0, 4.0], [23.0, 1.0, 4.0, 0.0], [24.0, 0.0, 2.0, 3.0], [26.0, 0.0, 1.0, 3.0]]","[[1.0, 0.0], [1.0, 0.0], [1.0, 0.0], [0.0, 6.0], [0.0, 9.0], [0.0, 9.0]]"
-
-a48308d4-e929-4f5a-b5fc-d771d39ad2f3;Fri Jul 21 12:00:14 2023;"[array([1., 1., 1., 1., 0., 0., 0., 0., 0.]), array([1., 1., 0., 1.]), array(['Inclusiveness', 'Well-being', 'Environmental sustainability',
-       'Privacy', 'Autonomy', 'Security of supply', 'Affordability'],
-      dtype=object), array(['1:Privacy/Well-being',
-       '2:Inclusiveness/Environmental sustainability',
-       '3:Inclusiveness/Well-being', '4:Privacy/Inclusiveness',
-       '5:Environmental sustainability/Well-being',
-       '6:Privacy/Environmental sustainability',
-       '7:Security of supply/Environmental sustainability',
-       '8:Affordability/Privacy', '9:Autonomy/Inclusiveness',
-       '10:Security of supply/Well-being', '11:Well-being/Affordability',
-       '12:Autonomy/Environmental sustainability',
-       '13:Security of supply/Privacy',
-       '14:Affordability/Environmental sustainability',
-       '15:Autonomy/Privacy', '16:Security of supply/Inclusiveness',
-       '17:Inclusiveness/Affordability', '18:Autonomy/Well-being',
-       '19:Security of supply/Autonomy', '20:Affordability/Autonomy',
-       '21:Affordability/Security of supply'], dtype=object)]";['0' 'Oui' 'Oui' 'Oui' 'Oui' 'Principale' '\n'];"[0.33333333 0.83333333 0.5        0.66666667 0.66666667 0.33333333
- 0.16666667]";[[1.0, 0.0, 2.0, 3.0], [2.0, 1.0, 3.0, 4.0], [3.0, 0.0, 2.0, 1.0], [4.0, 1.0, 3.0, 4.0], [5.0, 0.0, 1.0, 3.0], [6.0, 0.0, 3.0, 1.0], [7.0, 1.0, 3.0, 1.0], [8.0, 0.0, 2.0, 3.0], [9.0, 1.0, 3.0, 4.0], [10.0, 0.0, 2.0, 3.0], [11.0, 1.0, 3.0, 2.0], [12.0, 1.0, 2.0, 3.0], [13.0, 0.0, 2.0, 3.0], [14.0, 0.0, 3.0, 1.0], [15.0, 1.0, 3.0, 2.0], [16.0, 0.0, 3.0, 3.0], [17.0, 1.0, 3.0, 2.0], [18.0, 0.0, 0.0, 0.0], [19.0, 0.0, 0.0, 0.0], [20.0, 0.0, 0.0, 0.0], [21.0, 0.0, 0.0, 0.0]];[[1.0, 0.0], [1.0, 0.0], [1.0, 0.0], [1.0, 0.0], [1.0, 0.0], [1.0, 0.0], [1.0, 0.0], [0.0, 6.0], [1.0, 0.0], [0.0, 6.0], [1.0, 0.0], [1.0, 0.0], [0.0, 6.0], [1.0, 0.0], [0.0, 6.0], [0.0, 3.0], [1.0, 0.0], [1.0, 0.0], [1.0, 0.0], [1.0, 0.0], [0.0, 8.0]]
-
-ab054af7-01ec-4cff-af50-1232f1df5e22;Fri Jul 21 13:36:01 2023;"[array([1., 1., 1., 0., 0., 0., 0., 0., 0.]), array([1., 1., 0., 1.]), array(['Inclusiveness', 'Well-being', 'Environmental sustainability',
-       'Privacy', 'Autonomy', 'Security of supply', 'Affordability'],
-      dtype=object), array(['1:Privacy/Well-being',
-       '2:Inclusiveness/Environmental sustainability',
-       '3:Inclusiveness/Well-being', '4:Privacy/Inclusiveness',
-       '5:Environmental sustainability/Well-being',
-       '6:Privacy/Environmental sustainability',
-       '7:Security of supply/Environmental sustainability',
-       '8:Affordability/Privacy', '9:Autonomy/Inclusiveness',
-       '10:Security of supply/Well-being', '11:Well-being/Affordability',
-       '12:Autonomy/Environmental sustainability',
-       '13:Security of supply/Privacy',
-       '14:Affordability/Environmental sustainability',
-       '15:Autonomy/Privacy', '16:Security of supply/Inclusiveness',
-       '17:Inclusiveness/Affordability', '18:Autonomy/Well-being',
-       '19:Security of supply/Autonomy', '20:Affordability/Autonomy',
-       '21:Affordability/Security of supply'], dtype=object)]";['' '' '' '' '' '' ''];[0. 0. 0. 0. 0. 0. 0.];[[0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0]];[]
-22ec8921-d8d7-409f-9123-fedc99cf51f4;Fri Jul 21 14:10:58 2023;[array([0., 0., 1., 1., 0., 0., 0., 0., 0.]), array([1., 1., 0., 1.]), array(['Well-being', 'Privacy'], dtype=object), array(['1:Privacy/Well-being'], dtype=object)];[];[];[[1.0, 0.0, 0.0, 0.0]];[[0.0, 0.0]]
-1ea9b396-90af-484f-ae59-2ead8fd4fdcb;Fri Jul 21 14:11:33 2023;[array([0., 0., 1., 0., 0., 0., 0., 0., 0.]), array([1., 1., 0., 1.]), array(['Well-being', 'Privacy'], dtype=object), array(['1:Privacy/Well-being'], dtype=object)];[];[];[[0.0, 0.0, 0.0, 0.0]];[]
-a37021e2-03a7-44d4-ba0b-9aeb1046c5c4;Fri Jul 21 14:12:23 2023;[array([0., 0., 1., 1., 0., 0., 0., 0., 0.]), array([1., 1., 0., 1.]), array(['Well-being', 'Privacy'], dtype=object), array(['1:Privacy/Well-being'], dtype=object)];[];[];[[1.0, 0.0, 0.0, 0.0]];[[0.0, 0.0]]
-7a48fc98-b2f8-4055-bd1e-71df7cebeb51;Fri Jul 21 14:14:14 2023;[array([0., 0., 1., 1., 0., 0., 0., 0., 0.]), array([1., 1., 0., 1.]), array(['Well-being', 'Privacy'], dtype=object), array(['1:Privacy/Well-being'], dtype=object)];[];[];[[1.0, 0.0, 0.0, 0.0]];[[0.0, 0.0]]
-f6780852-7de0-4f94-8e9d-23b63654b57d;Fri Jul 21 14:28:44 2023;"[array([0., 0., 1., 0., 0., 0., 0., 0., 0.]), array([1., 1., 0., 1.]), array(['Inclusiveness', 'Well-being', 'Environmental sustainability',
-       'Privacy', 'Autonomy', 'Security of supply', 'Affordability'],
-      dtype=object), array(['1:Privacy/Well-being',
-       '2:Inclusiveness/Environmental sustainability',
-       '3:Inclusiveness/Well-being', '4:Privacy/Inclusiveness',
-       '5:Environmental sustainability/Well-being',
-       '6:Privacy/Environmental sustainability',
-       '7:Security of supply/Environmental sustainability',
-       '8:Affordability/Privacy', '9:Autonomy/Inclusiveness',
-       '10:Security of supply/Well-being', '11:Well-being/Affordability',
-       '12:Autonomy/Environmental sustainability',
-       '13:Security of supply/Privacy',
-       '14:Affordability/Environmental sustainability',
-       '15:Autonomy/Privacy', '16:Security of supply/Inclusiveness',
-       '17:Inclusiveness/Affordability', '18:Autonomy/Well-being',
-       '19:Security of supply/Autonomy', '20:Affordability/Autonomy',
-       '21:Affordability/Security of supply'], dtype=object)]";[];[];[[1.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0]];[]
-2418d638-0aa7-49ef-a3ed-24f400b576d0;Fri Jul 21 14:31:56 2023;"[array([0., 0., 1., 0., 0., 0., 0., 0., 0.]), array([1., 1., 0., 1.]), array(['Inclusiveness', 'Well-being', 'Environmental sustainability',
-       'Privacy', 'Autonomy', 'Security of supply', 'Affordability'],
-      dtype=object), array(['1:Privacy/Well-being',
-       '2:Inclusiveness/Environmental sustainability',
-       '3:Inclusiveness/Well-being', '4:Privacy/Inclusiveness',
-       '5:Environmental sustainability/Well-being',
-       '6:Privacy/Environmental sustainability',
-       '7:Security of supply/Environmental sustainability',
-       '8:Affordability/Privacy', '9:Autonomy/Inclusiveness',
-       '10:Security of supply/Well-being', '11:Well-being/Affordability',
-       '12:Autonomy/Environmental sustainability',
-       '13:Security of supply/Privacy',
-       '14:Affordability/Environmental sustainability',
-       '15:Autonomy/Privacy', '16:Security of supply/Inclusiveness',
-       '17:Inclusiveness/Affordability', '18:Autonomy/Well-being',
-       '19:Security of supply/Autonomy', '20:Affordability/Autonomy',
-       '21:Affordability/Security of supply'], dtype=object)]";[];[];[[0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0]];[]
-a7ca02ae-5580-4806-aa72-54c7cea8337f;Fri Jul 21 14:32:26 2023;"[array([0., 0., 1., 0., 0., 0., 0., 0., 0.]), array([1., 1., 0., 1.]), array(['Inclusiveness', 'Well-being', 'Environmental sustainability',
-       'Privacy', 'Autonomy', 'Security of supply', 'Affordability'],
-      dtype=object), array(['1:Privacy/Well-being',
-       '2:Inclusiveness/Environmental sustainability',
-       '3:Inclusiveness/Well-being', '4:Privacy/Inclusiveness',
-       '5:Environmental sustainability/Well-being',
-       '6:Privacy/Environmental sustainability',
-       '7:Security of supply/Environmental sustainability',
-       '8:Affordability/Privacy', '9:Autonomy/Inclusiveness',
-       '10:Security of supply/Well-being', '11:Well-being/Affordability',
-       '12:Autonomy/Environmental sustainability',
-       '13:Security of supply/Privacy',
-       '14:Affordability/Environmental sustainability',
-       '15:Autonomy/Privacy', '16:Security of supply/Inclusiveness',
-       '17:Inclusiveness/Affordability', '18:Autonomy/Well-being',
-       '19:Security of supply/Autonomy', '20:Affordability/Autonomy',
-       '21:Affordability/Security of supply'], dtype=object)]";[];[];[[0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0]];[]
-e51a7f3e-55cc-415b-a60e-7e8e5d21ae3d;Fri Jul 21 15:28:38 2023;[array([0., 0., 0., 0., 0., 0., 0., 0., 0.]), array([0., 0., 0., 0.]), array([], dtype=object), array([], dtype=object)];[];[];[];[]
-019676e3-cd80-450d-ab8b-49accc11f950;Fri Jul 21 15:29:16 2023;[array([0., 0., 0., 0., 0., 0., 0., 0., 0.]), array([0., 0., 0., 0.]), array([], dtype=object), array([], dtype=object)];[];[];[];[]
-83f45256-e6bf-46d9-81e2-9ebe51b7c8d2;Fri Jul 21 15:29:26 2023;[array([0., 0., 0., 0., 0., 0., 0., 0., 0.]), array([0., 0., 0., 0.]), array(['Well-being'], dtype=object), array([], dtype=object)];[];[];[];[]
-5c4a5dbc-0a91-4719-97fe-5aa606ad1924;Fri Jul 21 15:53:42 2023;"[array([1., 1., 1., 1., 0., 0., 0., 0., 0.]), array([1., 1., 0., 1.]), array(['Inclusiveness', 'Well-being', 'Environmental sustainability',
-       'Privacy', 'Security of supply', 'Affordability'], dtype=object), array(['1:Privacy/Well-being',
-       '2:Inclusiveness/Environmental sustainability',
-       '3:Inclusiveness/Well-being', '4:Privacy/Inclusiveness',
-       '5:Environmental sustainability/Well-being',
-       '6:Privacy/Environmental sustainability',
-       '7:Security of supply/Environmental sustainability',
-       '8:Affordability/Privacy', '9:Security of supply/Well-being',
-       '10:Well-being/Affordability', '11:Security of supply/Privacy',
-       '12:Affordability/Environmental sustainability',
-       '13:Security of supply/Inclusiveness',
-       '14:Inclusiveness/Affordability',
-       '15:Affordability/Security of supply'], dtype=object)]";"['6 et plus' 'Variable' 'Non' 'Oui' 'Variable' 'Secondaire'
- 'zhdqlkhdlzqhjd\n']";[0.5        0.83333333 0.33333333 0.5        0.66666667 0.33333333];[[1.0, 0.0, 3.0, 3.0], [2.0, 0.0, 0.0, 0.0], [3.0, 1.0, 2.0, 1.0], [4.0, 1.0, 0.0, 0.0], [5.0, 0.0, 0.0, 0.0], [6.0, 0.0, 0.0, 0.0], [7.0, 0.0, 0.0, 0.0], [8.0, 0.0, 0.0, 0.0], [9.0, 0.0, 0.0, 0.0], [10.0, 0.0, 0.0, 0.0], [11.0, 0.0, 0.0, 0.0], [12.0, 0.0, 0.0, 0.0], [13.0, 0.0, 0.0, 0.0], [14.0, 0.0, 0.0, 0.0], [15.0, 0.0, 0.0, 0.0]];[[1.0, 3.0], [1.0, 1.0], [1.0, 0.0], [1.0, 0.0], [1.0, 0.0], [1.0, 0.0], [1.0, 0.0], [1.0, 0.0], [1.0, 0.0], [1.0, 0.0], [1.0, 0.0], [1.0, 0.0], [1.0, 0.0], [1.0, 0.0], [1.0, 0.0]]
-390e13db-7e8b-47f8-9d63-39e09bb9131f;Fri Jul 21 16:21:31 2023;"[array([1., 1., 1., 1., 0., 0., 0., 0., 0.]), array([1., 1., 0., 1.]), array(['Inclusiveness', 'Well-being', 'Environmental sustainability',
-       'Privacy', 'Security of supply', 'Affordability'], dtype=object), array(['1:Privacy/Well-being',
-       '2:Inclusiveness/Environmental sustainability',
-       '3:Inclusiveness/Well-being', '4:Privacy/Inclusiveness',
-       '5:Environmental sustainability/Well-being',
-       '6:Privacy/Environmental sustainability',
-       '7:Security of supply/Environmental sustainability',
-       '8:Affordability/Privacy', '9:Security of supply/Well-being',
-       '10:Well-being/Affordability', '11:Security of supply/Privacy',
-       '12:Affordability/Environmental sustainability',
-       '13:Security of supply/Inclusiveness',
-       '14:Inclusiveness/Affordability',
-       '15:Affordability/Security of supply'], dtype=object)]";['0' 'Oui' 'Oui' 'Oui' 'Oui' 'Principale' '\n'];[0. 0. 0. 0. 0. 0.];[[1.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0]];[[0.0, 0.0], [0.0, 0.0], [0.0, 0.0], [0.0, 0.0], [0.0, 0.0], [0.0, 0.0], [0.0, 0.0], [0.0, 0.0], [0.0, 0.0], [0.0, 0.0], [0.0, 0.0], [0.0, 0.0], [0.0, 0.0], [0.0, 0.0], [0.0, 0.0]]
-d5305047-cd01-417c-87e5-e21cd9b3c973;Sun Jul 23 01:49:46 2023;"[array([1., 1., 1., 1., 0., 0., 0., 0., 0.]), array([1., 1., 0., 1.]), array(['Inclusiveness', 'Well-being', 'Environmental sustainability',
-       'Security of supply', 'Affordability'], dtype=object), array(['2:Inclusiveness/Environmental sustainability',
-       '3:Inclusiveness/Well-being',
-       '5:Environmental sustainability/Well-being',
-       '7:Security of supply/Environmental sustainability',
-       '9:Security of supply/Well-being', '10:Well-being/Affordability',
-       '12:Affordability/Environmental sustainability',
-       '13:Security of supply/Inclusiveness',
-       '14:Inclusiveness/Affordability',
-       '15:Affordability/Security of supply'], dtype=object)]";['0' 'Oui' 'Oui' 'Oui' 'Oui' 'Principale' '\n'];[0. 0. 0. 0. 0. 0.];[[2.0, 0.0, 0.0, 0.0], [3.0, 0.0, 0.0, 0.0], [5.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0]];[[0.0, 0.0], [0.0, 0.0], [0.0, 0.0], [0.0, 0.0], [0.0, 0.0], [0.0, 0.0], [0.0, 0.0], [0.0, 0.0], [0.0, 0.0], [0.0, 0.0]]
-7da2c41e-c877-47b6-8c5c-e4b8438f0b6a;Mon Jul 24 09:21:44 2023;"[array([1., 1., 1., 1., 0., 0., 0., 0., 0.]), array([1., 1., 0., 2.]), array(['Inclusiveness', 'Well-being', 'Environmental sustainability'],
-      dtype=object), array(['2:Inclusiveness/Environmental sustainability',
-       '3:Inclusiveness/Well-being',
-       '5:Environmental sustainability/Well-being',
-       '17:Inclusiveness/Environmental sustainability',
-       '18:Inclusiveness/Well-being',
-       '20:Environmental sustainability/Well-being'], dtype=object)]";['0' 'Oui' 'Oui' 'Oui' 'Oui' 'Principale' '\n'];[0. 1. 0. 0. 0. 0.];[[2.0, 0.0, 0.0, 0.0], [3.0, 0.0, 0.0, 0.0], [5.0, 0.0, 0.0, 0.0], [17.0, 0.0, 0.0, 0.0], [18.0, 0.0, 0.0, 0.0], [20.0, 0.0, 0.0, 0.0]];[[4.0, 4.0], [0.0, 0.0], [0.0, 0.0], [0.0, 0.0], [0.0, 0.0], [0.0, 0.0]]
-ffd132ca-f441-4dc8-bf16-abed2af5ae0e;Mon Jul 24 10:52:22 2023;[array([1., 1., 1., 1., 0., 0., 0., 0., 0.]), array([1., 1., 0., 1.]), array(['Inclusiveness', 'Well-being'], dtype=object), array(['3:Inclusiveness/Well-being'], dtype=object)];['0' 'Oui' 'Oui' 'Oui' 'Oui' 'Principale' '\n'];[0. 0. 0. 0. 0. 0.];[[3.0, 0.0, 0.0, 0.0]];[[0.0, 0.0]]
-1392fa55-8772-4125-bd11-95414ad6dbdb;Thu Jul 27 10:04:02 2023;[array([1., 1., 1., 1., 0., 0., 0., 0., 0.]), array([1., 1., 1., 1.]), array(['Inclusiveness', 'Well-being'], dtype=object), array(['3:Inclusiveness/Well-being'], dtype=object)];['0' 'Oui' 'Oui' 'Oui' 'Oui' 'Principale' '\n'];[0.5 0.5 0.5 0.5 0.5 0.5];[[0.0, 0.0, 0.0, 0.0]];[[0.0, 0.0]]
-f099676d-b29c-448b-84b3-2c65ec2f5353;Fri Jul 28 16:41:29 2023;"[array([1., 1., 1., 1., 0., 0., 0., 0., 0.]), array([1., 1., 0., 1.]), array(['Inclusiveness', 'Well-being', 'Environmental sustainability',
-       'Privacy', 'Security of supply', 'Affordability'], dtype=object), array(['1:Inclusiveness/Affordability', '11:Privacy/Well-being',
-       '8:Security of supply/Environmental sustainability',
-       '3:Affordability/Privacy', '7:Security of supply/Inclusiveness',
-       '14:Environmental sustainability/Well-being',
-       '6:Privacy/Security of supply',
-       '13:Inclusiveness/Environmental sustainability',
-       '4:Well-being/Affordability',
-       '10:Privacy/Environmental sustainability',
-       '15:Well-being/Security of supply',
-       '2:Affordability/Environmental sustainability',
-       '9:Privacy/Inclusiveness', '5:Security of supply/Affordability',
-       '12:Inclusiveness/Well-being'], dtype=object)]";"['Faire un choix' 'Faire un choix' 'Faire un choix' 'Faire un choix'
- 'Faire un choix' 'Faire un choix' 'Faire un choix' 'Faire un choix' '\n']";[0.5 0.5 0.5 0.5 0.5 0.5];[[1.0, 0.0, 2.0, 2.0], [11.0, 0.0, 2.0, 2.0], [8.0, 0.0, 2.0, 2.0], [3.0, 0.0, 2.0, 2.0], [7.0, 0.0, 2.0, 2.0], [14.0, 0.0, 2.0, 2.0], [6.0, 0.0, 2.0, 2.0], [13.0, 0.0, 2.0, 2.0], [4.0, 0.0, 2.0, 2.0], [10.0, 0.0, 2.0, 2.0], [15.0, 0.0, 2.0, 2.0], [2.0, 0.0, 2.0, 2.0], [9.0, 0.0, 2.0, 2.0], [5.0, 0.0, 2.0, 2.0], [0.0, 0.0, 0.0, 0.0]];[]
-745146fa-c7c9-45c4-8d5e-e0b204472390;Fri Jul 28 16:43:22 2023;"[array([0., 0., 1., 0., 0., 0., 0., 0., 0.]), array([1., 1., 0., 1.]), array(['Inclusiveness', 'Well-being', 'Environmental sustainability',
-       'Privacy', 'Security of supply', 'Affordability'], dtype=object), array(['1:Inclusiveness/Affordability', '11:Privacy/Well-being',
-       '8:Security of supply/Environmental sustainability',
-       '3:Affordability/Privacy', '7:Security of supply/Inclusiveness',
-       '14:Environmental sustainability/Well-being',
-       '6:Privacy/Security of supply',
-       '13:Inclusiveness/Environmental sustainability',
-       '4:Well-being/Affordability',
-       '10:Privacy/Environmental sustainability',
-       '15:Well-being/Security of supply',
-       '2:Affordability/Environmental sustainability',
-       '9:Privacy/Inclusiveness', '5:Security of supply/Affordability',
-       '12:Inclusiveness/Well-being'], dtype=object)]";[];[];[[1.0, 0.0, 2.0, 2.0], [11.0, 0.0, 2.0, 2.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0]];[]
-aaebe6a8-03de-4547-b35e-5df379b1bbbe;Mon Jul 31 12:02:34 2023;"[array([1., 1., 1., 0., 0., 0., 0., 0., 0.]), array([1., 1., 0., 1.]), array(['Inclusiveness', 'Well-being', 'Environmental sustainability',
-       'Privacy', 'Security of supply', 'Affordability'], dtype=object), array(['1:Inclusiveness/Affordability', '11:Privacy/Well-being',
-       '8:Security of supply/Environmental sustainability',
-       '3:Affordability/Privacy', '7:Security of supply/Inclusiveness',
-       '14:Environmental sustainability/Well-being',
-       '6:Privacy/Security of supply',
-       '13:Inclusiveness/Environmental sustainability',
-       '4:Well-being/Affordability',
-       '10:Privacy/Environmental sustainability',
-       '15:Well-being/Security of supply',
-       '2:Affordability/Environmental sustainability',
-       '9:Privacy/Inclusiveness', '5:Security of supply/Affordability',
-       '12:Inclusiveness/Well-being'], dtype=object)]";"['Faire un choix' 'Faire un choix' 'Faire un choix' 'Faire un choix'
- 'Faire un choix' 'Faire un choix' 'Faire un choix' 'Faire un choix' '\n']";[0.5 0.5 0.5 0.5 0.5 0.5];[[0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0]];[]
+Id;Time;Param;Profile;Sliders_responses;Choice_responses;Acceptability_responses
 0efa8d6f-018a-4770-a27a-d1ef55e1e492;Mon Jul 31 12:28:08 2023;"[array([1., 1., 1., 0., 0., 0., 0., 0., 0.]), array([1., 1., 0., 1.]), array(['Inclusiveness', 'Well-being', 'Environmental sustainability',
        'Privacy', 'Security of supply', 'Affordability'], dtype=object), array(['1:Inclusiveness/Affordability', '11:Privacy/Well-being',
        '8:Security of supply/Environmental sustainability',
@@ -246,22 +11,8 @@ aaebe6a8-03de-4547-b35e-5df379b1bbbe;Mon Jul 31 12:02:34 2023;"[array([1., 1., 1
        '15:Well-being/Security of supply',
        '2:Affordability/Environmental sustainability',
        '9:Privacy/Inclusiveness', '5:Security of supply/Affordability',
-       '12:Inclusiveness/Well-being'], dtype=object)]";"['18 - 24 ans' 'Autres personnes sans activité professionelle' '0' 'Non'
- 'Oui' 'Variable' 'Variable' 'Principale' 'petit gamer\n']";[0.66666667 0.66666667 0.16666667 0.83333333 0.16666667 0.83333333];[[1.0, 1.0, 0.0, 0.25], [11.0, 0.0, 0.25, 0.75], [8.0, 0.0, 0.25, 0.75], [3.0, 1.0, 0.0, 0.75], [7.0, 0.0, 0.0, 0.75], [14.0, 1.0, 0.0, 0.25], [6.0, 1.0, 0.5, 0.0], [13.0, 1.0, 0.75, 0.0], [4.0, 1.0, 0.0, 0.75], [10.0, 1.0, 0.25, 0.75], [15.0, 1.0, 0.25, 0.75], [2.0, 0.0, 0.0, 0.75], [9.0, 1.0, 0.25, 0.75], [5.0, 1.0, 0.25, 0.75], [12.0, 1.0, 0.25, 0.75]];[]
-650dcd6f-cd50-45ef-8d9e-c1dfc64cee6e;Mon Jul 31 14:09:33 2023;"[array([1., 1., 1., 0., 0., 0., 0., 0., 0.]), array([1., 1., 0., 1.]), array(['Inclusiveness', 'Well-being', 'Environmental sustainability',
-       'Privacy', 'Security of supply', 'Affordability'], dtype=object), array(['1:Inclusiveness/Affordability', '11:Privacy/Well-being',
-       '8:Security of supply/Environmental sustainability',
-       '3:Affordability/Privacy', '7:Security of supply/Inclusiveness',
-       '14:Environmental sustainability/Well-being',
-       '6:Privacy/Security of supply',
-       '13:Inclusiveness/Environmental sustainability',
-       '4:Well-being/Affordability',
-       '10:Privacy/Environmental sustainability',
-       '15:Well-being/Security of supply',
-       '2:Affordability/Environmental sustainability',
-       '9:Privacy/Inclusiveness', '5:Security of supply/Affordability',
-       '12:Inclusiveness/Well-being'], dtype=object)]";"['Faire un choix' 'Faire un choix' 'Faire un choix' 'Faire un choix'
- 'Faire un choix' 'Faire un choix' 'Faire un choix' 'Faire un choix' '\n']";[0.5 0.5 0.5 0.5 0.5 0.5];[[1.0, 1.0, 0.75, 0.25], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0]];[]
+       '12:Inclusiveness/Well-being'], dtype=object)]";"['18 - 24 ans' 'Autres personnes sans activitï¿½ professionelle' '0' 'Non'
+ 'Oui' 'Variable' 'Variable' 'Principale' 'petit gamer\n']";[0.66666667,0.66666667,0.16666667,0.83333333,0.16666667,0.83333333];[[1.0, 1.0, 0.0, 0.25], [11.0, 0.0, 0.25, 0.75], [8.0, 0.0, 0.25, 0.75], [3.0, 1.0, 0.0, 0.75], [7.0, 0.0, 0.0, 0.75], [14.0, 1.0, 0.0, 0.25], [6.0, 1.0, 0.5, 0.0], [13.0, 1.0, 0.75, 0.0], [4.0, 1.0, 0.0, 0.75], [10.0, 1.0, 0.25, 0.75], [15.0, 1.0, 0.25, 0.75], [2.0, 0.0, 0.0, 0.75], [9.0, 1.0, 0.25, 0.75], [5.0, 1.0, 0.25, 0.75], [12.0, 1.0, 0.25, 0.75]];[]
 d39d53c3-8c4e-4f5b-9404-a96c7900712e;Mon Jul 31 14:28:35 2023;"[array([1., 1., 1., 0., 0., 0., 0., 0., 0.]), array([1., 1., 0., 1.]), array(['Inclusiveness', 'Well-being', 'Environmental sustainability',
        'Privacy', 'Security of supply', 'Affordability'], dtype=object), array(['1:Inclusiveness/Affordability', '11:Privacy/Well-being',
        '8:Security of supply/Environmental sustainability',
@@ -274,9 +25,9 @@ d39d53c3-8c4e-4f5b-9404-a96c7900712e;Mon Jul 31 14:28:35 2023;"[array([1., 1., 1
        '15:Well-being/Security of supply',
        '2:Affordability/Environmental sustainability',
        '9:Privacy/Inclusiveness', '5:Security of supply/Affordability',
-       '12:Inclusiveness/Well-being'], dtype=object)]";"['25 - 34 ans' 'Autres personnes sans activité professionelle' '1' 'Non'
- 'Oui' 'Variable' 'Oui' 'Principale' '\n']";[1.         1.         1.         1.         0.66666667 0.66666667];[[1.0, 0.0, 0.0, 0.75], [11.0, 0.0, 0.75, 0.5], [8.0, 1.0, 0.5, 0.5], [3.0, 1.0, 1.0, 0.75], [7.0, 1.0, 0.25, 0.5], [14.0, 0.0, 0.5, 0.25], [6.0, 1.0, 0.75, 0.75], [13.0, 1.0, 1.0, 1.0], [4.0, 1.0, 0.0, 0.5], [10.0, 1.0, 1.0, 0.75], [15.0, 1.0, 0.5, 0.5], [2.0, 1.0, 1.0, 0.25], [9.0, 0.0, 0.5, 0.5], [5.0, 1.0, 0.5, 0.5], [12.0, 0.0, 0.5, 0.75]];[]
-165888ad-1c57-467e-b813-ec7df4d1c017;Mon Jul 31 14:32:33 2023;"[array([1., 1., 1., 0., 0., 0., 0., 0., 0.]), array([1., 1., 0., 1.]), array(['Inclusiveness', 'Well-being', 'Environmental sustainability',
+       '12:Inclusiveness/Well-being'], dtype=object)]";"['25 - 34 ans' 'Autres personnes sans activitï¿½ professionelle' '1' 'Non'
+ 'Oui' 'Variable' 'Oui' 'Principale' '\n']";[1.,1.,1.,1.,0.66666667,0.66666667];[[1.0, 0.0, 0.0, 0.75], [11.0, 0.0, 0.75, 0.5], [8.0, 1.0, 0.5, 0.5], [3.0, 1.0, 1.0, 0.75], [7.0, 1.0, 0.25, 0.5], [14.0, 0.0, 0.5, 0.25], [6.0, 1.0, 0.75, 0.75], [13.0, 1.0, 1.0, 1.0], [4.0, 1.0, 0.0, 0.5], [10.0, 1.0, 1.0, 0.75], [15.0, 1.0, 0.5, 0.5], [2.0, 1.0, 1.0, 0.25], [9.0, 0.0, 0.5, 0.5], [5.0, 1.0, 0.5, 0.5], [12.0, 0.0, 0.5, 0.75]];[]
+d0a0a0d9-81c6-4318-af78-31f2f7fe786a;Tue Aug  1 15:30:46 2023;"[array([1., 1., 1., 0., 0., 0., 0., 0., 0.]), array([1., 1., 0., 1.]), array(['Inclusiveness', 'Well-being', 'Environmental sustainability',
        'Privacy', 'Security of supply', 'Affordability'], dtype=object), array(['1:Inclusiveness/Affordability', '11:Privacy/Well-being',
        '8:Security of supply/Environmental sustainability',
        '3:Affordability/Privacy', '7:Security of supply/Inclusiveness',
@@ -288,5 +39,5 @@ d39d53c3-8c4e-4f5b-9404-a96c7900712e;Mon Jul 31 14:28:35 2023;"[array([1., 1., 1
        '15:Well-being/Security of supply',
        '2:Affordability/Environmental sustainability',
        '9:Privacy/Inclusiveness', '5:Security of supply/Affordability',
-       '12:Inclusiveness/Well-being'], dtype=object)]";"['Faire un choix' 'Faire un choix' 'Faire un choix' 'Faire un choix'
- 'Faire un choix' 'Faire un choix' 'Faire un choix' 'Faire un choix' '\n']";[0. 0. 0. 0. 0. 0.];[[0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0]];[]
+       '12:Inclusiveness/Well-being'], dtype=object)]";['' '' '' '' '' '' '' '' '\n'];[0.8333333333333334, 1.0, 0.16666666666666674, 0.8333333333333334, 0.33333333333333337, 0.6666666666666667];[[1.0, 0.0, 1.0, 0.5], [11.0, 1.0, 0.25, 0.5], [8.0, 1.0, 0.0, 0.5], [3.0, 1.0, 0.25, 0.5], [7.0, 1.0, 1.0, 0.5], [14.0, 0.0, 0.0, 0.5], [6.0, 1.0, 0.25, 0.5], [13.0, 1.0, 0.75, 0.5], [4.0, 1.0, 0.5, 0.5], [10.0, 1.0, 0.0, 0.5], [15.0, 1.0, 0.5, 0.5], [2.0, 1.0, 0.75, 0.5], [9.0, 1.0, 0.25, 0.5], [5.0, 1.0, 0.25, 0.5], [12.0, 0.0, 0.75, 0.5]];[]
+

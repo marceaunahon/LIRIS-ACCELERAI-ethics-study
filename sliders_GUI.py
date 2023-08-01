@@ -25,15 +25,23 @@ class SlidersGUI(ctk.CTk):
         self.button = ctk.CTkButton(self, text="Confirmer", command=self.save)
         self.button.place(relx = 0.5, rely=0.95, anchor = "center")
 
-        self.results = np.zeros(len(self.values)) #a modifier par selected_values ? -> append ?
+        #self.results = np.zeros(len(self.values))
+        self.results = []
 
     def save(self):
-        self.results[0] = self.first_frame.value1.get()
-        self.results[1] = self.first_frame.value2.get()
-        self.results[2] = self.first_frame.value3.get()
-        self.results[3] = self.second_frame.value1.get()
-        self.results[4] = self.second_frame.value2.get()
-        self.results[5] = self.second_frame.value3.get()
+        # self.results[0] = self.first_frame.value1.get()
+        # self.results[1] = self.first_frame.value2.get()
+        # self.results[2] = self.first_frame.value3.get()
+        # self.results[3] = self.second_frame.value1.get()
+        # self.results[4] = self.second_frame.value2.get()
+        # self.results[5] = self.second_frame.value3.get()
+        self.results.append(self.first_frame.value1.get())
+        self.results.append(self.first_frame.value2.get())
+        self.results.append(self.first_frame.value3.get())
+        self.results.append(self.second_frame.value1.get())
+        self.results.append(self.second_frame.value2.get())
+        self.results.append(self.second_frame.value3.get())
+        print(self.results)
         self.destroy()    
 
 class ValuesFrame(ctk.CTkFrame):
