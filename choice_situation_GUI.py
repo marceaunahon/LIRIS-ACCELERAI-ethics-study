@@ -144,7 +144,7 @@ class ChoiceSituationGUI(GeneralGUI):
         if self.relevance.get() == 0.75:
             self.relevance_str.set("Pertinent")
         if self.relevance.get() == 1.:
-            self.relevance_str.set("Très pertinent pertinent")
+            self.relevance_str.set("Très pertinent")
         #On appelle la fonction tous les 200ms
         self.after(200, self.var_int_to_string)
 

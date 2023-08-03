@@ -1,9 +1,7 @@
-from choice_situation_GUI import ChoiceSituationGUI
-from sliders_GUI import SlidersGUI
 import customtkinter as ctk
 from typing import List
 from situation import Value, ChoiceSituation
-from data import read_values_and_situations, store
+from data import read_values_and_situations
 import numpy as np
 from CTkMessagebox import CTkMessagebox
 
@@ -128,7 +126,8 @@ class ExperimentsFrame(ctk.CTkFrame):
                                               command=self.change_param_state)
         self.choose_choice = ctk.CTkCheckBox(master=self, text="Choix en situation ", variable=self.choice, 
                                              command=self.change_param_state)
-        self.choose_acceptability = ctk.CTkCheckBox(master=self, text="Acceptabilité", variable=self.acceptability)
+        self.choose_acceptability = ctk.CTkCheckBox(master=self, text="Acceptabilité", variable=self.acceptability,
+                                                    command=self.change_param_state)
 
         #Paramètres
         self.disp_values = ctk.IntVar()
