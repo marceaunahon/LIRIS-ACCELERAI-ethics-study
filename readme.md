@@ -51,3 +51,9 @@
 
 - One .csv output file:
     - **results.csv**: contains all the results from the User instance created in menu.py
+
+- One .py file to process results:
+    - **pairwise_comparison.py**: contains the class PairwiseComparison
+
+- One notebook of results processing:
+    - **results_analysis.ipynb**
