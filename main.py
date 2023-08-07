@@ -13,7 +13,6 @@ ctk.set_default_color_theme("green")
 values, values_name_only, situation_list = read_values_and_situations("data/values.csv", "data/situations.csv")
 menu = Menu(values, values_name_only, situation_list)
 menu.mainloop()
-#mettez une bonne note  à Marceau
 profile = []
 sliders_results = []
 choice_results = []
