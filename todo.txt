@@ -1,11 +1,9 @@
-en général
-- créer un event pour que entrée face next
+questionnaire :
+- mettre les questions en csv
+- ajouter un question.py pour faire un classe question
+- ajouter un read_question dans data.py
 
-questionnaire
-- limiter le nombre de caractères ?
 
-menu:
-- ne pas laisser choisir qu'une valeur / ou adapter pour 
-- laisser choisir l'ordre de passage des apps
+
 
 
