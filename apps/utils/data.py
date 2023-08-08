@@ -1,8 +1,8 @@
 import pandas as pd
 from typing import List
-from utils.value import Value
-from utils.situation import Situation
-from utils.user import User
+from value import Value
+from situation import Situation
+from user import User
 
 def read_values_and_situations(filename_values, filename_situations):
     #filename_values : nom du fichier csv contenant les valeurs au format suivant : Nom,Definition,Score

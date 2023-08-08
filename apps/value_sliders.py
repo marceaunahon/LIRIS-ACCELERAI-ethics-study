@@ -1,5 +1,4 @@
 import customtkinter as ctk
-import numpy as np
 from PIL import Image
 from utils.data import read_values_and_situations, Value
 from typing import List

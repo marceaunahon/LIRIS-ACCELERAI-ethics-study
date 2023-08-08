@@ -1,6 +1,6 @@
 import numpy as np
 import customtkinter as ctk
-from utils.data import read_values_and_situations, store
+from utils.data import read_values_and_situations
 from utils.situation import Situation
 from PIL import Image
 from typing import List

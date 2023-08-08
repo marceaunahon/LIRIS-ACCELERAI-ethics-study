@@ -1,4 +1,4 @@
-from utils.value import Value
+from value import Value
 
 class Situation():
 
