@@ -1,6 +1,6 @@
 from typing import List
 import numpy as np
-from data import ChoiceSituation, Value
+from utils.data import Situation, Value
 
 class PairwiseComparison():
 
@@ -11,7 +11,7 @@ class PairwiseComparison():
         self.probability_matrix = np.zeros(self.size) #prend en compte la difficulté : la somme des scores vaut 1
         self.multiplicative_matrix = np.zeros(self.size) #prend en compte la difficulté : le produit des scores vaut 1
 
-    def get_raw(self, choice_situations : List[ChoiceSituation], choices):
+    def get_raw(self, choice_situations : List[Situation], choices):
         for i in range(len(self.values)):
             value1 = self.values[i] #on trouve la première valeur
             for j in range(len(self.values)):
@@ -29,7 +29,7 @@ class PairwiseComparison():
                         if choices[k] == 0. : self.raw_matrix[j][i] = 1
         return self.raw_matrix
 
-    def get_probability(self, choice_situations : List[ChoiceSituation], choices, weights):
+    def get_probability(self, choice_situations : List[Situation], choices, weights):
         for i in range(len(self.values)):
             value1 = self.values[i] #on trouve la première valeur
             for j in range(len(self.values)):

@@ -1,7 +1,7 @@
 import numpy as np
 import customtkinter as ctk
-from data import read_values_and_situations, store
-from situation import ChoiceSituation
+from utils.data import read_values_and_situations, store
+from utils.situation import Situation
 from PIL import Image
 from typing import List
 from general_GUI import GeneralGUI
@@ -12,7 +12,7 @@ ctk.set_default_color_theme("green")
 
 class ChoiceSituationGUI(GeneralGUI):
 
-    def __init__(self, situation_list: List[ChoiceSituation], title : str = "GUI", 
+    def __init__(self, situation_list: List[Situation], title : str = "Choix en situation", 
                  size : List[int] = [1200,750], use_difficulty = True, use_relevance = True,
                  disp_values = False):
         #disp_values = False : les valeurs sont cachées (état par défaut)

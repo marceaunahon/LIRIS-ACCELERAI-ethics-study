@@ -1,7 +1,7 @@
 import numpy as np
 import customtkinter as ctk
-from data import read_values_and_situations, store
-from situation import ChoiceSituation
+from utils.data import read_values_and_situations, store
+from utils.situation import Situation
 from PIL import Image
 from typing import List
 from general_GUI import GeneralGUI
@@ -9,9 +9,9 @@ from general_GUI import GeneralGUI
 ctk.set_appearance_mode("System")
 ctk.set_default_color_theme("green")
 
-class AcceptabilityGUI(GeneralGUI):
+class AcceptabilitySituationGUI(GeneralGUI):
 
-    def __init__(self, situation_list: List[ChoiceSituation], title : str = "GUI", 
+    def __init__(self, situation_list: List[Situation], title : str = "Acceptabilité en situation", 
                  size : List[int] = [1200,700], disp_values = False):
         #disp_values = False : les valeurs sont cachées (état par défaut)
         #disp_values = True : les valeurs sont affichées
@@ -62,7 +62,7 @@ class AcceptabilityGUI(GeneralGUI):
 
 class UpperFrame(ctk.CTkFrame):
 
-    def __init__(self, parent : AcceptabilityGUI):
+    def __init__(self, parent : AcceptabilitySituationGUI):
         #On construit le cadre supérieur (présentation de la situation)
         super().__init__(master = parent, corner_radius=0)
         self.place(x=0, y=0, relwidth = 1, relheight = 0.6)
@@ -70,14 +70,14 @@ class UpperFrame(ctk.CTkFrame):
         self.im2 = ImageCanvasRight(self, GUI=parent) #on place l'image
         self.textbox = TextBox(self, GUI=parent) #on place le texte
 
-    def reset_upper_frame(self, GUI : AcceptabilityGUI):
+    def reset_upper_frame(self, GUI : AcceptabilitySituationGUI):
         self.textbox.reset_text(GUI) #on insère le nouveau texte
         self.im1.reset_image(GUI) #on insère la nouvelle image
         self.im2.reset_image(GUI)
 
 class ImageCanvasLeft(ctk.CTkCanvas):
 
-    def __init__(self, parent : UpperFrame, GUI : AcceptabilityGUI):
+    def __init__(self, parent : UpperFrame, GUI : AcceptabilitySituationGUI):
         super().__init__(master=parent)
         #On construit le canvas
         self.place(relx = 0.01, rely=0.1, relwidth = 0.28, relheight=0.8)
@@ -85,13 +85,13 @@ class ImageCanvasLeft(ctk.CTkCanvas):
         self.im_label = ctk.CTkLabel(master=self,image=self.im,text="") #on créé un label contenant l'image avec pour master le canvas
         self.im_label.place(relx=0.5,rely=0.5,anchor="center")
 
-    def reset_image(self, GUI : AcceptabilityGUI):
+    def reset_image(self, GUI : AcceptabilitySituationGUI):
         self.im = ctk.CTkImage(Image.open(GUI.situation.im1_path), size = (470,470))
         self.im_label.configure(image=self.im)
 
 class ImageCanvasRight(ctk.CTkCanvas):
 
-    def __init__(self, parent : UpperFrame, GUI : AcceptabilityGUI):
+    def __init__(self, parent : UpperFrame, GUI : AcceptabilitySituationGUI):
         super().__init__(master=parent)
         #On construit le canvas
         self.place(relx = 0.71, rely = 0.1, relwidth = 0.28, relheight = 0.8)
@@ -99,13 +99,13 @@ class ImageCanvasRight(ctk.CTkCanvas):
         self.im_label = ctk.CTkLabel(master=self,image=self.im,text="") #on créé un label contenant l'image avec pour master le canvas
         self.im_label.place(relx=0.5,rely=0.5,anchor="center")
 
-    def reset_image(self, GUI : AcceptabilityGUI):
+    def reset_image(self, GUI : AcceptabilitySituationGUI):
         self.im = ctk.CTkImage(Image.open(GUI.situation.im2_path), size = (470,470))
         self.im_label.configure(image=self.im)
 
 class TextBox(ctk.CTkTextbox):
 
-    def __init__(self, parent : UpperFrame, GUI : AcceptabilityGUI):
+    def __init__(self, parent : UpperFrame, GUI : AcceptabilitySituationGUI):
         #On construit la textbox
         font = ctk.CTkFont(family='Calibri', size = 20)
         super().__init__(master=parent, wrap="word", font=font, 
@@ -115,31 +115,31 @@ class TextBox(ctk.CTkTextbox):
         self.insert("0.0", self.text) #on y insère l'énoncé de la situation
         self.configure(state='disabled') #on rend le texte accessible seulement en lecture
 
-    def reset_text(self, GUI : AcceptabilityGUI):
+    def reset_text(self, GUI : AcceptabilitySituationGUI):
         self.adapt_text(GUI) #on affiche les valeurs si disp_values = True
         self.configure(state="normal") #on rend la textbox modifiable
         self.delete("0.0", "end") #on efface l'énoncé précédent
         self.insert("0.0",self.text) #on insère le nouvel énoncé
         self.configure(state="disabled") #on repasse la textbox en état non modifiable
         
-    def adapt_text(self, GUI : AcceptabilityGUI):
+    def adapt_text(self, GUI : AcceptabilitySituationGUI):
         self.text = GUI.situation.threshold_statement
 
 class LowerFrame(ctk.CTkFrame):
 
-    def __init__(self, parent : AcceptabilityGUI):
+    def __init__(self, parent : AcceptabilitySituationGUI):
         #On construit le cadre inférieur (évaluation de la situation)
         super().__init__(master = parent, corner_radius=0)
         self.place(relx=0, rely=0.6, relwidth = 1, relheight = 0.4)
         self.button_frame = EvalFrame(self, parent) 
         self.save_frame = SaveFrame(self, parent)
     
-    def reset_sliders(self, GUI : AcceptabilityGUI):
+    def reset_sliders(self, GUI : AcceptabilitySituationGUI):
         self.button_frame.reset(GUI)
 
 class EvalFrame(ctk.CTkFrame):
 
-    def __init__(self, parent : ctk.CTkFrame, GUI : AcceptabilityGUI):
+    def __init__(self, parent : ctk.CTkFrame, GUI : AcceptabilitySituationGUI):
         #On construit le cadre contenant les boutons et sliders de l'évaluation
         super().__init__(master = parent)
         self.font = ctk.CTkFont(size=20, weight="bold")
@@ -157,11 +157,11 @@ class EvalFrame(ctk.CTkFrame):
         self.variable_label = ctk.CTkLabel(master=self, textvariable=GUI.acceptability_str, font=self.font2)
         self.variable_label.place(relx=0.5, rely = 0.8, anchor="center")
 
-    def reset(self, GUI : AcceptabilityGUI):
+    def reset(self, GUI : AcceptabilitySituationGUI):
         GUI.acceptability.set(0.5)
 
 class SaveFrame(ctk.CTkFrame):
-    def __init__(self, parent : ctk.CTkFrame, GUI : AcceptabilityGUI):
+    def __init__(self, parent : ctk.CTkFrame, GUI : AcceptabilitySituationGUI):
         # On construit le cadre contenant les boutons "Suivant" et "Précédent"
         super().__init__(master=parent, fg_color="transparent")
         self.place(relx= 0.75, rely=0.75, relwidth=0.3, relheight=0.2)
@@ -172,5 +172,5 @@ class SaveFrame(ctk.CTkFrame):
 
 if __name__ == "__main__" : 
     values, values_name_only, situation_list = read_values_and_situations("data/values.csv", "data/situations2.csv")
-    interface = AcceptabilityGUI(situation_list)
+    interface = AcceptabilitySituationGUI(situation_list)
     interface.mainloop()

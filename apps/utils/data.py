@@ -1,8 +1,8 @@
 import pandas as pd
 from typing import List
-from value import Value
-from situation import ChoiceSituation
-from user import User
+from utils.value import Value
+from utils.situation import Situation
+from utils.user import User
 
 def read_values_and_situations(filename_values, filename_situations):
     #filename_values : nom du fichier csv contenant les valeurs au format suivant : Nom,Definition,Score
@@ -16,7 +16,7 @@ def read_values_and_situations(filename_values, filename_situations):
         values.append(Value(rowV[0], rowV[1], rowV[2])) #on créé les valeurs et on les ajoute à la liste values
     values_name_only = df_values.iloc[:,0].tolist() #on extrait la première colonne du dataframe des valeurs et on la convertit en liste    
     for index, rowS in df_situations.iterrows(): #on itère sur le dataframe des dilemmes
-        choice_situations.append(ChoiceSituation(rowS[0], values[values_name_only.index(rowS[1])], values[values_name_only.index(rowS[2])], 
+        choice_situations.append(Situation(rowS[0], values[values_name_only.index(rowS[1])], values[values_name_only.index(rowS[2])], 
                 rowS[3], rowS[4], rowS[5], rowS[6], rowS[7], rowS[8]))#on créé les situations et on les ajoute à la liste des situations
     return values, values_name_only, choice_situations
 

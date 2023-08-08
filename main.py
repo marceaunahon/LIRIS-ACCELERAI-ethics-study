@@ -1,10 +1,10 @@
-from data import read_values_and_situations
-from menu import Menu
-from questionnaire import Questionnaire
-from sliders_GUI import SlidersGUI
-from choice_situation_GUI import ChoiceSituationGUI
-from acceptability_GUI import AcceptabilityGUI
-from user import User
+from apps.utils.data import read_values_and_situations
+from apps.menu import Menu
+from apps.questionnaire import Questionnaire
+from apps.value_sliders import ValuesSliders
+from apps.choice_situation import ChoiceSituationGUI
+from apps.acceptability_situation import AcceptabilitySituationGUI
+from apps.utils.user import User
 import customtkinter as ctk
 
 ctk.set_appearance_mode("System")
@@ -25,7 +25,7 @@ if menu.global_param[0] == 1:
     questionnaire.mainloop()
     profile = questionnaire.results
 if menu.global_param[1] == 1:
-    sliders = SlidersGUI(values)
+    sliders = ValuesSliders(values)
     sliders.mainloop()
     sliders_results = sliders.results
 if menu.global_param[2] == 1:
@@ -35,7 +35,7 @@ if menu.global_param[2] == 1:
     choice_results_matrix = choice_GUI.results
     choice_results_list = choice_results_matrix.tolist()
 if menu.global_param[3] == 1:
-    acceptability_GUI = AcceptabilityGUI(menu.selected_situations) #voir pour disp values
+    acceptability_GUI = AcceptabilitySituationGUI(menu.selected_situations) #voir pour disp values
     acceptability_GUI.mainloop()
     acceptability_results = acceptability_GUI.acceptabilities
 

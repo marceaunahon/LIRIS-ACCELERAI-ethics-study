@@ -1,13 +1,13 @@
 import customtkinter as ctk
 from abc import ABC, abstractmethod
 from CTkMessagebox import CTkMessagebox
-from situation import ChoiceSituation
+from utils.situation import Situation
 from typing import List
 import numpy as np
 
 class GeneralGUI(ctk.CTk, ABC):
     
-    def __init__(self, situation_list: List[ChoiceSituation], title : str, size : List[int]):
+    def __init__(self, situation_list: List[Situation], title : str, size : List[int]):
         super().__init__()
         self.iconbitmap('Images/liris.ico')
         self.title(title)

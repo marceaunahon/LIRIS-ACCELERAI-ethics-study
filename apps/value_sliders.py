@@ -1,14 +1,14 @@
 import customtkinter as ctk
 import numpy as np
 from PIL import Image
-from data import read_values_and_situations, Value
+from utils.data import read_values_and_situations, Value
 from typing import List
 
 
 ctk.set_appearance_mode("System")
 ctk.set_default_color_theme("green")
 
-class SlidersGUI(ctk.CTk):
+class ValuesSliders(ctk.CTk):
 
     def __init__(self, values : List[Value]):
         super().__init__()
@@ -45,7 +45,7 @@ class SlidersGUI(ctk.CTk):
         self.destroy()    
 
 class ValuesFrame(ctk.CTkFrame):
-    def __init__(self, parent: SlidersGUI,_relx, _rely, value1 : Value, value2 : Value, value3 : Value):
+    def __init__(self, parent: ValuesSliders,_relx, _rely, value1 : Value, value2 : Value, value3 : Value):
         super().__init__(master=parent)
         self.info_img = ctk.CTkImage(Image.open("Images/q.png"), size=(30,30))
         self.place(relx = _relx, rely= _rely, relwidth = 0.48, relheight = 0.75, anchor="center")
@@ -142,5 +142,5 @@ class ValuesFrame(ctk.CTkFrame):
 
 if __name__ == "__main__":
     values, values_name_only, situation_list = read_values_and_situations("data/values.csv", "data/situations.csv")
-    app = SlidersGUI(values)
+    app = ValuesSliders(values)
     app.mainloop()

@@ -1,7 +1,7 @@
 import customtkinter as ctk
 from typing import List
-from situation import Value, ChoiceSituation
-from data import read_values_and_situations
+from utils.situation import Value, Situation
+from utils.data import read_values_and_situations
 import numpy as np
 from CTkMessagebox import CTkMessagebox
 
@@ -12,7 +12,7 @@ class Menu(ctk.CTk):
 
     def __init__(self, values_list: List[Value], 
                  values_list_name_only : List[str],
-                 situation_list : List[ChoiceSituation],
+                 situation_list : List[Situation],
                  title : str = "menu", 
                  size : List[int] = [500,700]):
         super().__init__()
@@ -87,7 +87,7 @@ class Menu(ctk.CTk):
 
     def store_menu_choices(self):
         self.list = []
-        self.selected_situations_str = np.zeros(len(self.selected_situations), dtype=ChoiceSituation)
+        self.selected_situations_str = np.zeros(len(self.selected_situations), dtype=Situation)
         for i in range(len(self.selected_situations)):
             self.selected_situations_str[i] = str(self.selected_situations[i])
         self.selected_values_str = np.zeros(len(self.selected_values), dtype=Value)

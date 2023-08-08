@@ -1,6 +1,6 @@
-from value import Value
+from utils.value import Value
 
-class ChoiceSituation():
+class Situation():
 
     def __init__(self, id : str, value1 : Value, value2 : Value, 
                  choice_statement : str, option1 : str, option2 : str,
