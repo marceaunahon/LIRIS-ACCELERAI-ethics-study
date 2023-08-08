@@ -1,4 +1,4 @@
-from apps.utils.data import read_values_and_situations
+from apps.utils.data_parser import read_values_and_situations
 from apps.menu import Menu
 from apps.questionnaire import Questionnaire
 from apps.value_sliders import ValuesSliders

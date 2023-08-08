@@ -36,4 +36,3 @@ def store(filename, name1, list1, name2 = None, list2 = None,
     df = pd.DataFrame(dict)
     df.to_csv(filename)
 
-
