@@ -1,7 +1,7 @@
 import customtkinter as ctk
 from abc import ABC, abstractmethod
 from CTkMessagebox import CTkMessagebox
-from utils.situation import Situation
+from situation import Situation
 from typing import List
 import numpy as np
 

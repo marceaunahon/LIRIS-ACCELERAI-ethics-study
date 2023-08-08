@@ -1,7 +1,7 @@
 import customtkinter as ctk
 from typing import List
-from utils.situation import Value, Situation
-from utils.data import read_values_and_situations
+from situation import Value, Situation
+from data_parser import read_values_and_situations
 import numpy as np
 from CTkMessagebox import CTkMessagebox
 

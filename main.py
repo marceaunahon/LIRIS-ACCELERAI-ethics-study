@@ -1,10 +1,10 @@
-from apps.utils.data_parser import read_values_and_situations
-from apps.menu import Menu
-from apps.questionnaire import Questionnaire
-from apps.value_sliders import ValuesSliders
-from apps.choice_situation import ChoiceSituationGUI
-from apps.acceptability_situation import AcceptabilitySituationGUI
-from apps.utils.user import User
+from data_parser import read_values_and_situations
+from menu import Menu
+from questionnaire import Questionnaire
+from value_sliders import ValuesSliders
+from choice_situation import ChoiceSituationGUI
+from acceptability_situation import AcceptabilitySituationGUI
+from user import User
 import customtkinter as ctk
 
 ctk.set_appearance_mode("System")
