@@ -1,7 +1,6 @@
 import pandas as pd
 from typing import List, Any
-from value import Value
-from situation import Situation
+from situation import Situation, Value
 from user import User
 
 def read_values_and_situations(filename_values : str, filename_situations : str):

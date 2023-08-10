@@ -39,10 +39,10 @@ if menu.global_param[3] == 1:
     acceptability_GUI.mainloop()
     acceptability_results = acceptability_GUI.acceptabilities
 
-user = User(menu = menu.list,
-            profile = profile, 
-            sliders_responses = sliders_results,
-            choice_responses = choice_results_list,
-            acceptability_responses = acceptability_results_list)
-user.save()
+# user = User(menu = menu.list,
+#             profile = profile, 
+#             sliders_responses = sliders_results,
+#             choice_responses = choice_results_list,
+#             acceptability_responses = acceptability_results_list)
+# user.save()
 
