@@ -22,18 +22,20 @@ class AcceptabilitySituationGUI(GeneralGUI):
         self.geometry(f"{size[0]}x{size[1]}")
 
         #Creation des listes
-        self.acceptabilities = np.zeros(len(situation_list))
+        self.acceptabilities = np.zeros(len(situation_list)) #liste contenant l'acceptabilité de chaque situation
 
         #Création des variables
-        self.acceptability = ctk.DoubleVar(value=0.5)
-        self.acceptability_str = ctk.StringVar()
+        self.acceptability = ctk.DoubleVar(value=0.5) #acceptabilité de la situation
+        self.acceptability_str = ctk.StringVar() #acceptabilité de la situation en chaine de caractère (plus compréhensible)
+        self.progress = ctk.StringVar() #indique l'avancée de l'expérience (indice du dilemme actuel/nombre total)
+        self.progress.set(f"1/{len(self.situation_list)}")
 
         #Options
         self.disp_values = disp_values
 
         #Création de l'interface
-        self.upper_frame = UpperFrame(self)
-        self.lower_frame = LowerFrame(self)
+        self.upper_frame = UpperFrame(self, x=0, y=0, relwidth = 1, relheight = 0.6)
+        self.lower_frame = LowerFrame(self, relx=0, rely=0.6, relwidth = 1, relheight = 0.4)
         self.var_int_to_string() #affiche les variables des sliders en texte pour une meilleure compréhension de l'utilisateur
 
     def save(self):
@@ -62,26 +64,30 @@ class AcceptabilitySituationGUI(GeneralGUI):
 
 class UpperFrame(ctk.CTkFrame):
 
-    def __init__(self, parent : AcceptabilitySituationGUI):
+    def __init__(self, parent : AcceptabilitySituationGUI, x : float, y : float, relwidth : float, relheight : float):
         #On construit le cadre supérieur (présentation de la situation)
         super().__init__(master = parent, corner_radius=0)
-        self.place(x=0, y=0, relwidth = 1, relheight = 0.6)
-        self.im1 = ImageCanvasLeft(self, GUI=parent) #on place l'image
-        self.im2 = ImageCanvasRight(self, GUI=parent) #on place l'image
-        self.textbox = TextBox(self, GUI=parent) #on place le texte
+        self.place(x=x, y=y, relwidth = relwidth, relheight = relheight)
+        self.im1 = ImageCanvasLeft(self, GUI=parent, relx = 0.01, rely=0.1, 
+                                   relwidth = 0.28, relheight=0.8) #on place l'image de gauche
+        self.im2 = ImageCanvasRight(self, GUI=parent, relx = 0.71, rely = 0.1, 
+                                    relwidth = 0.28, relheight = 0.8) #on place l'image de droite
+        self.textbox = TextBox(self, GUI=parent, relx=0.31, rely=0.1, 
+                               relwidth = 0.38, relheight = 0.8) #on place le texte
 
     def reset_upper_frame(self, GUI : AcceptabilitySituationGUI):
         self.textbox.reset_text(GUI) #on insère le nouveau texte
-        self.im1.reset_image(GUI) #on insère la nouvelle image
-        self.im2.reset_image(GUI)
+        self.im1.reset_image(GUI) #on insère la nouvelle image de gauche
+        self.im2.reset_image(GUI) #on insère la nouvelle image de droite
 
 class ImageCanvasLeft(ctk.CTkCanvas):
 
-    def __init__(self, parent : UpperFrame, GUI : AcceptabilitySituationGUI):
+    def __init__(self, parent : UpperFrame, GUI : AcceptabilitySituationGUI, 
+                 relx : float, rely : float, relwidth : float, relheight : float):
         super().__init__(master=parent)
-        #On construit le canvas
-        self.place(relx = 0.01, rely=0.1, relwidth = 0.28, relheight=0.8)
-        self.im = ctk.CTkImage(Image.open(GUI.situation.im1_path), size = (470,470))
+        #On construit le canvas contenant l'image à gauche
+        self.place(relx = relx, rely=rely, relwidth = relwidth, relheight=relheight)
+        self.im = ctk.CTkImage(Image.open(GUI.situation.im1_path), size = (470,470)) #on stocke l'image
         self.im_label = ctk.CTkLabel(master=self,image=self.im,text="") #on créé un label contenant l'image avec pour master le canvas
         self.im_label.place(relx=0.5,rely=0.5,anchor="center")
 
@@ -91,10 +97,11 @@ class ImageCanvasLeft(ctk.CTkCanvas):
 
 class ImageCanvasRight(ctk.CTkCanvas):
 
-    def __init__(self, parent : UpperFrame, GUI : AcceptabilitySituationGUI):
+    def __init__(self, parent : UpperFrame, GUI : AcceptabilitySituationGUI, 
+                 relx : float, rely : float, relwidth : float, relheight : float):
         super().__init__(master=parent)
-        #On construit le canvas
-        self.place(relx = 0.71, rely = 0.1, relwidth = 0.28, relheight = 0.8)
+        #On construit le canvas contenant l'image à droite
+        self.place(relx = relx, rely = rely, relwidth = relwidth, relheight = relheight)
         self.im = ctk.CTkImage(Image.open(GUI.situation.im2_path), size = (470,470))
         self.im_label = ctk.CTkLabel(master=self,image=self.im,text="") #on créé un label contenant l'image avec pour master le canvas
         self.im_label.place(relx=0.5,rely=0.5,anchor="center")
@@ -105,18 +112,19 @@ class ImageCanvasRight(ctk.CTkCanvas):
 
 class TextBox(ctk.CTkTextbox):
 
-    def __init__(self, parent : UpperFrame, GUI : AcceptabilitySituationGUI):
-        #On construit la textbox
+    def __init__(self, parent : UpperFrame, GUI : AcceptabilitySituationGUI, 
+                 relx : float, rely : float, relwidth : float, relheight : float):
+        #On construit la textbox contenant l'énoncé de la situation
         font = ctk.CTkFont(family='Calibri', size = 20)
         super().__init__(master=parent, wrap="word", font=font, 
                          fg_color ="transparent", border_color="#33AE81", border_width =5)
-        self.place(relx=0.31, rely=0.1, relwidth = 0.38, relheight = 0.8)
+        self.place(relx=relx, rely=rely, relwidth = relwidth, relheight = relheight)
         self.adapt_text(GUI) #on affiche les valeurs si disp_values = True
         self.insert("0.0", self.text) #on y insère l'énoncé de la situation
         self.configure(state='disabled') #on rend le texte accessible seulement en lecture
 
     def reset_text(self, GUI : AcceptabilitySituationGUI):
-        self.adapt_text(GUI) #on affiche les valeurs si disp_values = True
+        self.adapt_text(GUI) #on initialise le texte
         self.configure(state="normal") #on rend la textbox modifiable
         self.delete("0.0", "end") #on efface l'énoncé précédent
         self.insert("0.0",self.text) #on insère le nouvel énoncé
@@ -127,24 +135,28 @@ class TextBox(ctk.CTkTextbox):
 
 class LowerFrame(ctk.CTkFrame):
 
-    def __init__(self, parent : AcceptabilitySituationGUI):
+    def __init__(self, parent : AcceptabilitySituationGUI, 
+                 relx : float, rely : float, relwidth : float, relheight : float):
         #On construit le cadre inférieur (évaluation de la situation)
         super().__init__(master = parent, corner_radius=0)
-        self.place(relx=0, rely=0.6, relwidth = 1, relheight = 0.4)
-        self.button_frame = EvalFrame(self, parent) 
-        self.save_frame = SaveFrame(self, parent)
+        self.place(relx=relx, rely=rely, relwidth = relwidth, relheight = relheight)
+        self.button_frame = EvalFrame(self, parent, relx=0.5, rely=0.31, 
+                                      relwidth = 0.6, relheight = 0.8) #cadre contenant l'évaluation de la situation
+        self.save_frame = SaveFrame(self, parent, relx= 0.75, rely=0.75, 
+                                    relwidth=0.25, relheight=0.2) #cadre contenant la progress bar et les boutons de navigation
     
     def reset_sliders(self, GUI : AcceptabilitySituationGUI):
         self.button_frame.reset(GUI)
 
 class EvalFrame(ctk.CTkFrame):
 
-    def __init__(self, parent : ctk.CTkFrame, GUI : AcceptabilitySituationGUI):
+    def __init__(self, parent : ctk.CTkFrame, GUI : AcceptabilitySituationGUI,
+                 relx : float, rely : float, relwidth : float, relheight : float):
         #On construit le cadre contenant les boutons et sliders de l'évaluation
         super().__init__(master = parent)
-        self.font = ctk.CTkFont(size=20, weight="bold")
-        self.font2 = ctk.CTkFont(size=16, weight="bold")
-        self.place(relx=0.5, rely=0.31, relwidth = 0.6, relheight = 0.8, anchor="center")
+        self.font = ctk.CTkFont(size=20, weight="bold") #police du titre
+        self.font2 = ctk.CTkFont(size=16, weight="bold") #police des labels
+        self.place(relx=relx, rely=rely, relwidth = relwidth, relheight = relheight, anchor="center")
 
         #Boutons et sliders utilisés en configuration "threshold"
         self.ok_or_not_ok = ctk.CTkLabel(master=self, text="Sans intervention de votre part, le sytème va agir", font=self.font)
@@ -161,16 +173,22 @@ class EvalFrame(ctk.CTkFrame):
         GUI.acceptability.set(0.5)
 
 class SaveFrame(ctk.CTkFrame):
-    def __init__(self, parent : ctk.CTkFrame, GUI : AcceptabilitySituationGUI):
-        # On construit le cadre contenant les boutons "Suivant" et "Précédent"
+    def __init__(self, parent : ctk.CTkFrame, GUI : AcceptabilitySituationGUI, 
+                 relx : float, rely : float, relwidth : float, relheight : float):
+        # On construit le cadre contenant les boutons "Suivant" et "Précédent" et la progress bar
         super().__init__(master=parent, fg_color="transparent")
-        self.place(relx= 0.75, rely=0.75, relwidth=0.3, relheight=0.2)
+        self.place(relx=relx, rely=rely, relwidth = relwidth, relheight = relheight)
+        self.progress = ctk.CTkProgressBar(self)
+        self.progress.place(relx=0.5, rely= 0.1, anchor="center")
+        self.progress.set(1/len(GUI.situation_list))
+        self.label = ctk.CTkLabel(self, textvariable=GUI.progress)
+        self.label.place(relx=0.9, rely=0.1, anchor="center")
         self.end = ctk.CTkButton(self, text="Suivant", text_color=("black", "white"), command=GUI.next)
-        self.end.place(relx = 0.42, rely=0.5)
+        self.end.place(relx = 0.75, rely=0.6, anchor="center")
         self.back = ctk.CTkButton(self, text="Précédent", text_color=("black", "white"), command=GUI.previous)
-        self.back.place(relx = 0, rely=0.5)
+        self.back.place(relx = 0.25, rely=0.6, anchor="center")
 
 if __name__ == "__main__" : 
-    values, values_name_only, situation_list = read_values_and_situations("data/values.csv", "data/situations2.csv")
+    values, values_name_only, situation_list = read_values_and_situations("data/values.csv", "data/situations.csv")
     interface = AcceptabilitySituationGUI(situation_list)
     interface.mainloop()

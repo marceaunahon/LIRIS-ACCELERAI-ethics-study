@@ -13,7 +13,7 @@ class Questionnaire(ctk.CTk):
         self.geometry("500x800")
         self.title_label = ctk.CTkLabel(self, text="Quel utilisateur êtes vous ?", font=ctk.CTkFont(size=30, weight="bold"))
         self.title_label.place(relx=0.5, rely=0.04, anchor="center")
-        self.main_frame = MainFrame(self)
+        self.main_frame = MainFrame(self, relx = 0.5, rely = 0.5, relwidth = 0.9, relheight=0.83)
         self.button = ctk.CTkButton(self, text="Confirmer", command=self.save)
         self.button.place(relx = 0.8, rely=0.95, anchor = "center")
         self.results = np.zeros(9, dtype="U200")
@@ -31,9 +31,9 @@ class Questionnaire(ctk.CTk):
         self.destroy()
 
 class MainFrame(ctk.CTkFrame):
-    def __init__(self, parent: Questionnaire):
-        super().__init__(master=parent, corner_radius=0) #,fg_color="transparent")
-        self.place(relx = 0.5, rely = 0.5, relwidth = 0.9, relheight=0.83, anchor="center")
+    def __init__(self, parent: Questionnaire, relx : float, rely : float, relwidth : float, relheight : float):
+        super().__init__(master=parent, corner_radius=0)
+        self.place(relx = relx, rely = rely, relwidth = relwidth, relheight=relheight, anchor="center")
         self.font = ctk.CTkFont(size=16, weight="bold")
 
         self.age = ctk.StringVar(value="")

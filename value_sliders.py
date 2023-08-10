@@ -15,12 +15,12 @@ class ValuesSliders(ctk.CTk):
         self.title("Questionnaire valeurs")
         self.geometry("900x700")
 
-        self.values = values
+        self.values = values #liste des valeurs
 
         self.title_label = ctk.CTkLabel(self, text="Quelles valeurs sont importantes pour vous ?", font=ctk.CTkFont(size=22, weight="bold"))
         self.title_label.place(relx=0.5, rely=0.06, anchor="center")
-        self.first_frame = ValuesFrame(self, 0.25, 0.5, self.values[0], self.values[1], self.values[2])
-        self.second_frame = ValuesFrame(self, 0.75, 0.5, self.values[3], self.values[4], self.values[5])
+        self.first_frame = ValuesFrame(self, 0.25, 0.5, self.values[0], self.values[1], self.values[2]) #cadre comportant les trois premières valeurs
+        self.second_frame = ValuesFrame(self, 0.75, 0.5, self.values[3], self.values[4], self.values[5]) #cadre comportant les trois dernières valeurs
         self.button = ctk.CTkButton(self, text="Confirmer", command=self.save)
         self.button.place(relx = 0.5, rely=0.95, anchor = "center")
 
@@ -28,12 +28,6 @@ class ValuesSliders(ctk.CTk):
         self.results = []
 
     def save(self):
-        # self.results[0] = self.first_frame.value1.get()
-        # self.results[1] = self.first_frame.value2.get()
-        # self.results[2] = self.first_frame.value3.get()
-        # self.results[3] = self.second_frame.value1.get()
-        # self.results[4] = self.second_frame.value2.get()
-        # self.results[5] = self.second_frame.value3.get()
         self.results.append(self.first_frame.value1.get())
         self.results.append(self.first_frame.value2.get())
         self.results.append(self.first_frame.value3.get())
@@ -46,7 +40,6 @@ class ValuesSliders(ctk.CTk):
 class ValuesFrame(ctk.CTkFrame):
     def __init__(self, parent: ValuesSliders,_relx, _rely, value1 : Value, value2 : Value, value3 : Value):
         super().__init__(master=parent)
-        self.info_img = ctk.CTkImage(Image.open("Images/q.png"), size=(30,30))
         self.place(relx = _relx, rely= _rely, relwidth = 0.48, relheight = 0.75, anchor="center")
         self.font = ctk.CTkFont(size=16, weight="bold")
         self.font2 = ctk.CTkFont(size=12)

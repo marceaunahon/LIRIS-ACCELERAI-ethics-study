@@ -20,17 +20,20 @@ class Menu(ctk.CTk):
         self.title(title)
         self.geometry(f"{size[0]}x{size[1]}")
 
-        self.values = values_list
-        self.values_name_only = values_list_name_only
-        self.situation_list = situation_list
+        self.values = values_list #liste des valeurs
+        self.values_name_only = values_list_name_only #liste des noms de valeurs
+        self.situation_list = situation_list #liste des situations
         self.font20 = ctk.CTkFont(size=20, weight="bold")
         self.font18 = ctk.CTkFont(size=18, weight="bold")
         self.font16 = ctk.CTkFont(size=16, weight="bold")
-        self.experiment_frame = ExperimentsFrame(self)
-        self.values_frame = ValuesFrame(self)
+        self.experiment_frame = ExperimentsFrame(self, relx=0.02, rely=0.05, 
+                                                 relwidth = 0.47, relheight = 0.8) #cadre de gauche : choix des applications
+        self.values_frame = ValuesFrame(self, relx=0.51, rely=0.05, 
+                                        relwidth = 0.47, relheight = 0.8) #cadre de droite : choix des valeurs
         self.confirm = ctk.CTkButton(master=self, text="Confirmer", command=self.next)
         self.confirm.place(relx=0.5, rely=0.92, anchor="center")
 
+        # Liste contenant les choix fait dans le menu
         self.global_param = np.zeros(9)
         self.sliders_param = 2
         self.choice_param = np.zeros(4)
@@ -51,17 +54,20 @@ class Menu(ctk.CTk):
 
         
     def store_params(self):
+        #Stocke les paramètres globaux (les applications choisies)
         self.global_param[0] = self.experiment_frame.questionnaire.get()
         self.global_param[1] = self.experiment_frame.sliders.get()
         self.global_param[2] = self.experiment_frame.choice.get()
         self.global_param[3] = self.experiment_frame.acceptability.get()
 
+        #Stocke les paramètre spécifiques de l'application ChoiceSituation
         self.choice_param[0] = self.experiment_frame.use_diff.get()
         self.choice_param[1] = self.experiment_frame.use_rel.get()
         self.choice_param[2] = self.experiment_frame.disp_values.get()
         self.choice_param[3] = self.experiment_frame.number.get()
 
     def store_values(self):
+        # On stocke les valeurs choisies dans le menu
         for i in range(len(self.values)):
              if self.values_frame.values_variables[i].get() == 1:
                   for j in range(len(self.values)):
@@ -70,7 +76,9 @@ class Menu(ctk.CTk):
                             self.selected_values_name_only.append(self.values_name_only[j])
 
     def store_situations(self):
-        temp_situations = []
+        # On stocke les situations correspondant aux valeurs choisies et au nombre de situations souhaité
+        temp_situations = [] #liste temporaire de situations
+        # On stocke dans une liste temporaire le nombre de situations souhaité par couple de valeur, pour tous les couples
         if self.experiment_frame.number.get() == 1:
             temp_situations = self.situation_list[0:15]
         if self.experiment_frame.number.get() == 2:
@@ -81,12 +89,13 @@ class Menu(ctk.CTk):
             temp_situations = self.situation_list[0:60]
         if self.experiment_frame.number.get() == 3:
             temp_situations = self.situation_list[0:75]
+        # On stocke dans une liste finale temp_situations en retirant toutes les valeurs qui n'ont pas été sélectionnées
         for situation in temp_situations:
             if situation.value1 in self.selected_values and situation.value2 in self.selected_values:
                 self.selected_situations.append(situation)
 
     def store_menu_choices(self):
-        self.list = []
+        self.list = [] #liste contenant tous les choix fait de le menu
         self.selected_situations_str = np.zeros(len(self.selected_situations), dtype=Situation)
         for i in range(len(self.selected_situations)):
             self.selected_situations_str[i] = str(self.selected_situations[i])
@@ -110,9 +119,9 @@ class Menu(ctk.CTk):
 
 class ExperimentsFrame(ctk.CTkFrame):
 
-    def __init__(self, parent : Menu):
+    def __init__(self, parent : Menu, relx : float, rely : float, relwidth : float, relheight : float):
         super().__init__(master = parent)
-        self.place(relx=0.02, rely=0.05, relwidth = 0.47, relheight = 0.8)
+        self.place(relx=relx, rely=rely, relwidth = relwidth, relheight = relheight)
         self.title = ctk.CTkLabel(master=self, text="Applications", font=parent.font20)
         self.title.place(relx=0.5, rely=0.1, anchor="center")
 
@@ -161,6 +170,7 @@ class ExperimentsFrame(ctk.CTkFrame):
         self.number.set(0)
 
     def change_param_state(self):
+        # Adapte l'accessibilité des boutons en fonction des choix possibles
         if self.choice.get() == 1 or self.acceptability.get() == 1:
             self.number_menu.configure(state="normal")
             self.number.set(1)
@@ -183,10 +193,10 @@ class ExperimentsFrame(ctk.CTkFrame):
 
 class ValuesFrame(ctk.CTkFrame):
 
-    def __init__(self, parent : Menu):
+    def __init__(self, parent : Menu, relx : float, rely : float, relwidth : float, relheight : float):
         super().__init__(master = parent)
         self.a = []
-        self.place(relx=0.51, rely=0.05, relwidth = 0.47, relheight = 0.8)
+        self.place(relx=relx, rely=rely, relwidth = relwidth, relheight = relheight)
         self.title = ctk.CTkLabel(master=self, text="Valeurs", font=parent.font20)
         self.title.place(relx=0.5, rely=0.1, anchor="center")
 
@@ -228,6 +238,7 @@ class ValuesFrame(ctk.CTkFrame):
         self.affordability_button.place(relx = 0.15, rely = 0.74, anchor="w")
 
     def check_all(self):
+        # Gère la sélection automatique de toutes les valeurs
         if self.all.get() == 1 :
             for vv in self.values_variables:
                     vv.set(1)
@@ -236,6 +247,7 @@ class ValuesFrame(ctk.CTkFrame):
                     vv.set(0)
 
     def uncheck_all(self):
+        # Gère la desélection automatique de toutes les valuers
         for vv in self.values_variables:
             if vv.get() == 0:
                 self.all.set(0)

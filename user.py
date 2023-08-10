@@ -6,7 +6,7 @@ import numpy as np
 
 class User():
 
-    def __init__(self, id = uuid.uuid4(), time = time.ctime(), menu = [], profile = [], sliders_responses = [], choice_responses = [], acceptability_responses = []):
+    def __init__(self, id = uuid.uuid4(), time = time.ctime(), menu : list= [], profile = [], sliders_responses = [], choice_responses = [], acceptability_responses = []):
         self.id = id
         self.time = time
         self.param = menu
