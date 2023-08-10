@@ -1,7 +1,6 @@
 import numpy as np
 import customtkinter as ctk
-from data_parser import read_values_and_situations
-from situation import Situation
+from utils.data_parser import read_values_and_situations, Situation
 from PIL import Image
 from typing import List
 from general_GUI import GeneralGUI
@@ -19,7 +18,7 @@ class ChoiceSituationGUI(GeneralGUI):
         #disp_values = True : les valeurs sont affichées
         #threshold = True : mode seuil d'acceptabilité
         super().__init__(situation_list, title, size)
-        self.iconbitmap('Images/liris.ico')
+        self.iconbitmap('images/liris.ico')
         self.title(title)
         self.geometry(f"{size[0]}x{size[1]}")
 

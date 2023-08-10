@@ -1,6 +1,6 @@
 import customtkinter as ctk
 from PIL import Image
-from data_parser import read_values_and_situations, Value
+from utils.data_parser import read_values_and_situations, Value
 from typing import List
 
 

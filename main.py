@@ -1,10 +1,9 @@
-from data_parser import read_values_and_situations
-from menu import Menu
-from questionnaire import Questionnaire
-from value_sliders import ValuesSliders
-from choice_situation import ChoiceSituationGUI
-from acceptability_situation import AcceptabilitySituationGUI
-from user import User
+from apps.utils.data_parser import read_values_and_situations, User
+from apps.menu import Menu
+from apps.questionnaire import Questionnaire
+from apps.value_sliders import ValuesSliders
+from apps.choice_situation import ChoiceSituationGUI
+from apps.acceptability_situation import AcceptabilitySituationGUI
 import customtkinter as ctk
 
 ctk.set_appearance_mode("System")
@@ -39,10 +38,10 @@ if menu.global_param[3] == 1:
     acceptability_GUI.mainloop()
     acceptability_results = acceptability_GUI.acceptabilities
 
-user = User(menu = menu.list,
-            profile = profile, 
-            sliders_responses = sliders_results,
-            choice_responses = choice_results_list,
-            acceptability_responses = acceptability_results_list)
-user.save()
+# user = User(menu = menu.list,
+#             profile = profile, 
+#             sliders_responses = sliders_results,
+#             choice_responses = choice_results_list,
+#             acceptability_responses = acceptability_results_list)
+# user.save()
 

@@ -1,7 +1,6 @@
 import numpy as np
 import customtkinter as ctk
-from data_parser import read_values_and_situations
-from situation import Situation
+from utils.data_parser import read_values_and_situations, Situation
 from PIL import Image
 from typing import List
 from general_GUI import GeneralGUI
