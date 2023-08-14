@@ -1,0 +1,9 @@
+Title;Answers
+Tranche d'âge;["18 - 24 ans", "25 - 34 ans", "35 - 49 ans", "50 - 64 ans", "65 et plus"]
+Catégorie socio-professionelle;["Agriculteurs exploitants", "Artisans, commerçants et chefs d'entreprise","Cadres et professions intellectuelles supérieures", "Professions intermédiaires","Employés", "Ouvriers", "Retraités", "Etudiants","Autres personnes sans activité professionelle"]
+Avec combien de personnes vivez-vous ?;["0", "1", "2", "3", "4", "5", "6 et plus"]
+En semaine, êtes-vous présent(e) la journée ?;["Oui", "Non", "Variable"]
+En semaine, êtes-vous présent(e) la nuit ?;["Oui", "Non", "Variable"]
+En week-end, êtes-vous présent(e) la journée ?;["Oui", "Non", "Variable"]
+En week-end, êtes-vous présent(e) la nuit ?;["Oui", "Non", "Variable"]
+Il s'agit de votre résidence :;["Principale", "Secondaire"]

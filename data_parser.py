@@ -2,6 +2,7 @@ import pandas as pd
 from typing import List, Any
 from situation import Situation, Value
 from user import User
+from question import Question
 
 def read_values_and_situations(filename_values : str, filename_situations : str):
     #filename_values : nom du fichier csv contenant les valeurs au format suivant : Name;Name_fr;Definition_fr
@@ -19,13 +20,21 @@ def read_values_and_situations(filename_values : str, filename_situations : str)
                 rowS[3], rowS[4], rowS[5], rowS[6], rowS[7], rowS[8]))#on créé les situations et on les ajoute à la liste des situations
     return values, values_name_only, choice_situations
 
-def read_user(filename_user : str):
+def read_users(filename_user : str):
     #filename_user : nom du fichier csv contenant les utilisateurs au format suivant : Id;Time;Param;Profile;Sliders_responses;Choice_responses;Acceptability_responses
     users = [] #liste vide qui contiendra tous les utilisateurs du fichier csv
     df_user = pd.read_csv(filename_user,  sep=";", encoding='utf-8') #on lit le fichier csv avec pandas
     for index, rowU in df_user.iterrows(): #on itère sur la dataframe des utilisateurs
         users.append(User(rowU[0], rowU[1], rowU[2], rowU[3], rowU[4], rowU[5], rowU[6])) #on crée les utilisateurs et on les ajoute à la liste users
     return users
+
+def read_questions(filename_questions : str):
+    #filename_user : nom du fichier csv contenant les utilisateurs au format suivant : Id;Time;Param;Profile;Sliders_responses;Choice_responses;Acceptability_responses
+    questions = [] #liste vide qui contiendra tous les utilisateurs du fichier csv
+    df_questions = pd.read_csv(filename_questions,  sep=";", encoding='utf-8') #on lit le fichier csv avec pandas
+    for index, rowQ in df_questions.iterrows(): #on itère sur la dataframe des utilisateurs
+        questions.append(Question(rowQ[0], rowQ[1])) #on crée les utilisateurs et on les ajoute à la liste users
+    return questions
         
 
 def store(filename, name1, list1, name2 = None, list2 = None, 

@@ -1,4 +1,4 @@
-from data_parser import read_values_and_situations
+from data_parser import read_values_and_situations, read_questions
 from menu import Menu
 from questionnaire import Questionnaire
 from value_sliders import ValuesSliders
@@ -21,7 +21,8 @@ choice_results_list = []
 acceptability_results_list = [] 
 
 if menu.global_param[0] == 1:
-    questionnaire = Questionnaire()
+    questions = read_questions("data/questions.csv")
+    questionnaire = Questionnaire(questions)
     questionnaire.mainloop()
     profile = questionnaire.results
 if menu.global_param[1] == 1:
