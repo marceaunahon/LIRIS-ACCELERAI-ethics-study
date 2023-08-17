@@ -1,8 +1,16 @@
+# Supplementary material
+
+Link : https://docs.google.com/spreadsheets/d/1Tqz-7S0gbLO5fKInpwF88NEyRvWMSgn35qGMMRKGPbw/edit?usp=sharing
+The link gives you acces to:
+    - all the values, their source and definition
+    - our categorisation
+    - all the situations
+
 # How it works
 
 - In order to launch the app, you have to run the menu.py file. It will then launch a Menu instance, i.e. a GUI that asks you what application you want to launch, and to select params. There are four applications:
     - **Questionnaire** (*Questionnaire utilisateur*): an user questionnaire that allows to gather data about user profile
-    - **SlidersGUI** (*Questionnaire valeurs*): presents all the values to the user and asks them to quantify their importance thanks to sliders
+    - **ValuesSliders** (*Questionnaire valeurs*): presents all the values to the user and asks them to quantify their importance thanks to sliders
     - **ChoiceSituationGUI** (*Choix en situation*): presents a situation and two options, the user must choose one the two possibilites
         - You can show the user the value that corresponds which corresponds to each option (*Montrer les valeurs*)
         - You can ask the user to quantify how hard it is to decide with a slider (*Demander la difficulté*)
@@ -36,15 +44,16 @@
 - Three .py files to manage data from the input files:
     - **value.py**: contains the class Value
     - **situation.py**: contains the class Situation
-    - **data.py**: parse the two csv files and create Value and Situation instances
+    - **question.py**: contains the class Question
+    - **data_parser.py**: parse the two csv files and create Value and Situation instances
 
 - Six apps .py files :
     - **general_GUI.py**: contains the abstract GUI class GeneralGUI
-        - **choice_situations_GUI.py**: contains the GUI class ChoiceSituationGUI that inherites from GeneralGUI
-        - **acceptability_GUI.py**: contains the GUI class AcceptabilityGUI that inherites from GeneralGUI
+        - **choice_situations.py**: contains the GUI class ChoiceSituationGUI that inherites from GeneralGUI
+        - **acceptability.py**: contains the GUI class AcceptabilityGUI that inherites from GeneralGUI
     - **questionnaire.py**: contains the GUI class Questionnaire
     - **sliders_GUI.py**: contains the GUI class SlidersGUI
-    - **menu.py**: contains the GUI class Menu, enable to choose what application to launch
+    - **menu.py**: contains the GUI class Menu, enables to choose what application to launch
 
 - One .py file to manage data from the Menu file:
     - **user.py**: contains the class User
