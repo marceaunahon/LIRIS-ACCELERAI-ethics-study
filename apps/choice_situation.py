@@ -1,10 +1,9 @@
 import numpy as np
 import customtkinter as ctk
-from data_parser import read_values_and_situations
-from situation import Situation
+from apps.utils.data_parser import read_values_and_situations, Situation
 from PIL import Image
 from typing import List
-from general_GUI import GeneralGUI
+from apps.general_GUI import GeneralGUI
 
 
 ctk.set_appearance_mode("System")
@@ -19,7 +18,7 @@ class ChoiceSituationGUI(GeneralGUI):
         #disp_values = True : les valeurs sont affichées
         #threshold = True : mode seuil d'acceptabilité
         super().__init__(situation_list, title, size)
-        self.iconbitmap('Images/liris.ico')
+        self.iconbitmap('apps/images/liris.ico')
         self.title(title)
         self.geometry(f"{size[0]}x{size[1]}")
 
@@ -397,8 +396,3 @@ class SaveFrame(ctk.CTkFrame):
         self.end.place(relx = 0.75, rely=0.5, anchor="center")
         self.back = ctk.CTkButton(self, text="Précédent", text_color=("black", "white"), command=GUI.previous)
         self.back.place(relx = 0.25, rely=0.5, anchor="center")
-
-if __name__ == "__main__" : 
-    values, values_name_only, situation_list = read_values_and_situations("data/values.csv", "data/situations.csv")
-    interface = ChoiceSituationGUI(situation_list, use_difficulty=False, use_relevance=False, disp_values=True)
-    interface.mainloop()

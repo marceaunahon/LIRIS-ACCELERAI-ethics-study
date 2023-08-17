@@ -1,9 +1,2 @@
-questionnaire :
-- mettre les questions en csv
-- ajouter un question.py pour faire un classe question
-- ajouter un read_question dans data.py
-
-
-
-
-
+- finir de tout commenter
+- remplir tous les statement2

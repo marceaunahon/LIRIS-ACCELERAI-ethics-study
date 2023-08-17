@@ -1,7 +1,7 @@
 import customtkinter as ctk
 from abc import ABC, abstractmethod
 from CTkMessagebox import CTkMessagebox
-from situation import Situation
+from apps.utils.data_parser import Situation
 from typing import List
 import numpy as np
 
@@ -9,7 +9,7 @@ class GeneralGUI(ctk.CTk, ABC):
     
     def __init__(self, situation_list: List[Situation], title : str, size : List[int]):
         super().__init__()
-        self.iconbitmap('Images/liris.ico')
+        self.iconbitmap('apps/images/liris.ico')
         self.title(title)
         self.geometry(f"{size[0]}x{size[1]}")
 

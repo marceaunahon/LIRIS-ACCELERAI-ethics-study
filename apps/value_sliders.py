@@ -1,6 +1,5 @@
 import customtkinter as ctk
-from PIL import Image
-from data_parser import read_values_and_situations, Value
+from apps.utils.data_parser import read_values_and_situations, Value
 from typing import List
 
 
@@ -11,7 +10,7 @@ class ValuesSliders(ctk.CTk):
 
     def __init__(self, values : List[Value]):
         super().__init__()
-        self.iconbitmap('Images/liris.ico')
+        self.iconbitmap('apps/images/liris.ico')
         self.title("Questionnaire valeurs")
         self.geometry("900x700")
 
@@ -130,9 +129,3 @@ class ValuesFrame(ctk.CTkFrame):
         #On appelle la fonction tous les 200ms
         self.after(200, self.var_int_to_string)
 
-
-
-if __name__ == "__main__":
-    values, values_name_only, situation_list = read_values_and_situations("data/values.csv", "data/situations.csv")
-    app = ValuesSliders(values)
-    app.mainloop()

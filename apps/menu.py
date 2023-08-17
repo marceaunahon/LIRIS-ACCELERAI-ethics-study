@@ -1,7 +1,6 @@
 import customtkinter as ctk
 from typing import List
-from situation import Value, Situation
-from data_parser import read_values_and_situations
+from apps.utils.data_parser import read_values_and_situations, Value, Situation
 import numpy as np
 from CTkMessagebox import CTkMessagebox
 
@@ -16,7 +15,7 @@ class Menu(ctk.CTk):
                  title : str = "menu", 
                  size : List[int] = [500,700]):
         super().__init__()
-        self.iconbitmap('Images/liris.ico')
+        self.iconbitmap('apps/images/liris.ico')
         self.title(title)
         self.geometry(f"{size[0]}x{size[1]}")
 

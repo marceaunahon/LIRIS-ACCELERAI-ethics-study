@@ -1,7 +1,6 @@
 import customtkinter as ctk
 import numpy as np
-from data_parser import read_questions
-from question import Question
+from apps.utils.data_parser import Question
 from typing import List
 
 ctk.set_appearance_mode("System")
@@ -11,7 +10,7 @@ class Questionnaire(ctk.CTk):
 
     def __init__(self, questions : List[Question]):
         super().__init__()
-        self.iconbitmap('Images/liris.ico')
+        self.iconbitmap('apps/images/liris.ico')
         self.title("Questionnaire utilisateur")
         self.geometry("500x800")
         self.questions = questions
@@ -92,10 +91,3 @@ class MainFrame(ctk.CTkFrame):
         self.entry = ctk.CTkTextbox(self)
         self.entry_label.place(relx=0.5, rely=0.85, anchor="center")
         self.entry.place(relx=0.5, rely=0.89, relwidth = 0.9, relheight = 0.07, anchor="n")
-
-if __name__ == "__main__":
-    questions = read_questions("data/questions.csv")
-    app = Questionnaire(questions)
-    app.mainloop()
-    a = app.results
-    print(a)

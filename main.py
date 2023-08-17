@@ -1,16 +1,16 @@
-from data_parser import read_values_and_situations, read_questions
-from menu import Menu
-from questionnaire import Questionnaire
-from value_sliders import ValuesSliders
-from choice_situation import ChoiceSituationGUI
-from acceptability_situation import AcceptabilitySituationGUI
-from user import User
+from apps.utils.data_parser import read_values_and_situations, read_questions
+from apps.menu import Menu
+from apps.questionnaire import Questionnaire
+from apps.value_sliders import ValuesSliders
+from apps.choice_situation import ChoiceSituationGUI
+from apps.acceptability_situation import AcceptabilitySituationGUI
+from apps.utils.user import User
 import customtkinter as ctk
 
 ctk.set_appearance_mode("System")
 ctk.set_default_color_theme("green")
 
-values, values_name_only, situation_list = read_values_and_situations("data/values.csv", "data/situations.csv")
+values, values_name_only, situation_list = read_values_and_situations("apps/utils/data/values.csv", "apps/utils/data/situations.csv")
 menu = Menu(values, values_name_only, situation_list)
 menu.mainloop()
 profile = []
@@ -21,7 +21,7 @@ choice_results_list = []
 acceptability_results_list = [] 
 
 if menu.global_param[0] == 1:
-    questions = read_questions("data/questions.csv")
+    questions = read_questions("apps/utils/data/questions.csv")
     questionnaire = Questionnaire(questions)
     questionnaire.mainloop()
     profile = questionnaire.results

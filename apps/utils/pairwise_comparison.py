@@ -1,6 +1,6 @@
 from typing import List
 import numpy as np
-from data_parser import Situation, Value
+from apps.utils.data_parser import Situation, Value
 
 class PairwiseComparison():
 

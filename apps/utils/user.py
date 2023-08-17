@@ -43,6 +43,5 @@ class User():
         self.results.append(self.choice_responses)
         self.results.append(self.acceptability_responses)
         df = pd.DataFrame([self.results])
-        # Open the csv file in append mode and write the DataFrame to it
-        with open("data/results.csv", "a") as f:
+        with open("apps/utils/data/results.csv", "a") as f:
             df.to_csv(f, sep=";", index=False, header=False)
