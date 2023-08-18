@@ -8,7 +8,7 @@ The link gives you acces to:
 
 # How it works
 
-- In order to launch the app, you have to run the menu.py file. It will then launch a Menu instance, i.e. a GUI that asks you what application you want to launch, and to select params. There are four applications:
+- In order to launch the app, you have to run the main.py file. It will then launch a Menu instance, i.e. a GUI that asks you what application you want to launch, and to select params. There are four applications:
     - **Questionnaire** (*Questionnaire utilisateur*): an user questionnaire that allows to gather data about user profile
     - **ValuesSliders** (*Questionnaire valeurs*): presents all the values to the user and asks them to quantify their importance thanks to sliders
     - **ChoiceSituationGUI** (*Choix en situation*): presents a situation and two options, the user must choose one the two possibilites
@@ -18,7 +18,7 @@ The link gives you acces to:
     - **AcceptabilitySituationGUI** (*Acceptabilité*): presents a situation and the option chosen by the system. Ask the user to judge the option and decide if he should let the system act or intervene
 - A paramater (*Nombre de situations*) allows to choose how many situations will be presented for each couple of values in the ChoiceSituationGUI and AcceptabilitySituationGUI
 - The menu also asks what value you want to study
-- The results and data processing are in the nooteboks
+- The results and data processing are in the nootebok result_analysis.ipynb
 
 
 # Modules
