@@ -15,8 +15,8 @@ The link gives you acces to:
         - You can show the user the value that corresponds which corresponds to each option (*Montrer les valeurs*)
         - You can ask the user to quantify how hard it is to decide with a slider (*Demander la difficulté*)
         - You can ask the user to quantify the relevance of the situation (*Demander la pertinence*)
-    - **AcceptabilityGUI** (*Acceptabilité*): presents a situation and the option chosen by the system. Ask the user to judge the option and decide if he should let the system act or intervene
-- A paramater (*Nombre de situations*) allows to choose how many situations will be presented for each couple of values in the ChoiceSituationGUI and AcceptabilityGUI
+    - **AcceptabilitySituationGUI** (*Acceptabilité*): presents a situation and the option chosen by the system. Ask the user to judge the option and decide if he should let the system act or intervene
+- A paramater (*Nombre de situations*) allows to choose how many situations will be presented for each couple of values in the ChoiceSituationGUI and AcceptabilitySituationGUI
 - The menu also asks what value you want to study
 - The results and data processing are in the nooteboks
 
