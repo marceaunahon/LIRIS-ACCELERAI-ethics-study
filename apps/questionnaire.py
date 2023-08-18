@@ -19,9 +19,10 @@ class Questionnaire(ctk.CTk):
         self.main_frame = MainFrame(self, relx = 0.5, rely = 0.5, relwidth = 0.9, relheight=0.83)
         self.button = ctk.CTkButton(self, text="Confirmer", command=self.save)
         self.button.place(relx = 0.8, rely=0.95, anchor = "center")
-        self.results = np.zeros(9, dtype="U200")
+        self.results = np.zeros(9, dtype="U200") #liste contenant toutes les réponses
 
     def save(self):
+        #On stocke les réponses et on quitte l'interface
         self.results[0] = self.main_frame.q1.get()
         self.results[1] = self.main_frame.q2.get()
         self.results[2] = self.main_frame.q3.get()
