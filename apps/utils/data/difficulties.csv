@@ -1,4 +1,4 @@
-Inc/Aff;Pri/WB;Sos/ES;Aff/Pri;Sos/Inc;ES/WB;Pri/Sos;Inc/ES;WB/Aff;Pri/ES;WB/Sos;Aff/ES;Pri/Inc;Sos/Aff;Inc/WB
+1:Inclusiveness/Affordability;2:Privacy/Well-being;3:Security of supply/Environmental sustainability;4:Affordability/Privacy;5:Security of supply/Inclusiveness;6:Environmental sustainability/Well-being;7:Privacy/Security of supply;8:Inclusiveness/Environmental sustainability;9:Well-being/Affordability;10:Privacy/Environmental sustainability;11:Well-being/Security of supply;12:Affordability/Environmental sustainability;13:Privacy/Inclusiveness;14:Security of supply/Affordability;15:Inclusiveness/Well-being
 Medium difficulty;Medium difficulty;Difficult;Difficult;Easy;Medium difficulty;Difficult;Difficult;Difficult;Medium difficulty;Difficult;Very difficult;Difficult;Medium difficulty;Easy
 Very difficult;Easy;Easy;Very easy;Difficult;Medium difficulty;Medium difficulty;Difficult;Easy;Easy;Medium difficulty;Difficult;Medium difficulty;Medium difficulty;Very difficult
 Difficult;Easy;Very easy;Medium difficulty;Easy;Easy;Easy;Medium difficulty;Easy;Easy;Very easy;Very difficult;Easy;Easy;Easy
