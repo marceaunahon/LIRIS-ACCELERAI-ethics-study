@@ -1,7 +1,7 @@
 # Supplementary material
 
 https://docs.google.com/spreadsheets/d/1Tqz-7S0gbLO5fKInpwF88NEyRvWMSgn35qGMMRKGPbw/edit?usp=sharing  
-The link gives you acces to:
+The link gives access to:
 - all the values, their source and definition
 - our categorisation
 - all the situations
