@@ -1,68 +1,61 @@
-# Supplementary material
+# Capturing stakeholders values and preferences regarding algorithmic systems
 
-https://docs.google.com/spreadsheets/d/1Tqz-7S0gbLO5fKInpwF88NEyRvWMSgn35qGMMRKGPbw/edit?usp=sharing  
-The link gives access to:
-- all the values, their source and definition
-- our categorisation
-- all the situations
+**Paper:** [Capturing stakeholders values and preferences regarding algorithmic systems](https://hal.science/hal-04487320v1/file/mNahon_ihm24.pdf)
 
-# How it works
+**Authors:** Marceau Nahon, Aurélien Tabard, Audrey Serna
 
-- In order to launch the app, you have to run the main.py file. It will then launch a Menu instance, i.e. a GUI that asks you what application you want to launch, and to select params. There are four applications:
-    - **Questionnaire** (*Questionnaire utilisateur*): an user questionnaire that allows to gather data about user profile
-    - **ValuesSliders** (*Questionnaire valeurs*): presents all the values to the user and asks them to quantify their importance thanks to sliders
-    - **ChoiceSituationGUI** (*Choix en situation*): presents a situation and two options, the user must choose one the two possibilites
-        - You can show the user the value that corresponds which corresponds to each option (*Montrer les valeurs*)
-        - You can ask the user to quantify how hard it is to decide with a slider (*Demander la difficulté*)
-        - You can ask the user to quantify the relevance of the situation (*Demander la pertinence*)
-    - **AcceptabilitySituationGUI** (*Acceptabilité*): presents a situation and the option chosen by the system. Ask the user to judge the option and decide if he should let the system act or intervene
-- A paramater (*Nombre de situations*) allows to choose how many situations will be presented for each couple of values in the ChoiceSituationGUI and AcceptabilitySituationGUI
-- The menu also asks what value you want to study
-- The results and data processing are in the nootebok result_analysis.ipynb
+**Contact:** marceau.nahon@gmail.com
+
+In this paper, we investigate how users’ preferences can be captured in order to incorporate more ethical considerations in the design of such systems. Adopting a value sensitive design approach, we propose a method to measure how much the context can impact the differences between the declared importance of values and decisions made in a given situation. We developed a survey tool that enable to measure importance of values in either absolute or relative ways, comparing pairs of values in specific situations. We conducted a preliminary study to test our survey tool with fifteen participants in the context of Smart Grids. Our results show differences in the way participants estimate values and underline the interest of capturing users preferences in context.
+
+```bibtex
+@inproceedings{nahon:hal-04487320,
+  TITLE = {{Capturing stakeholders values and preferences regarding algorithmic systems}},
+  AUTHOR = {Nahon, Marceau and Tabard, Aur{\'e}lien and Serna, Audrey},
+  URL = {https://hal.science/hal-04487320},
+  BOOKTITLE = {{IHM'24 - 35e Conf{\'e}rence Internationale Francophone sur l'Interaction Humain-Machine}},
+  ADDRESS = {Paris, France},
+  ORGANIZATION = {{AFIHM and Sorbonne Universit{\'e}}},
+  HAL_LOCAL_REFERENCE = {TeC},
+  VOLUME = {IHM'24 : Actes {\'e}tendus de la 35{\`e}me conf{\'e}rence Francophone sur l'Interaction Humain-Machine},
+  YEAR = {2024},
+  MONTH = Mar,
+  KEYWORDS = {Value Sensitive Design ; Ethics ; Artificial Intelligence ; Smart-grids ; Survey tool ; Design sensible aux valeurs ; Ethique ; Intelligence Artificielle ; Smart-grids ; Outil d'enqu{\^e}te},
+  PDF = {https://hal.science/hal-04487320/file/mNahon_ihm24.pdf},
+  HAL_ID = {hal-04487320},
+  HAL_VERSION = {v1},
+}
+```
 
 
-# Modules
+## Install
 
-- The applications are implemented with the module **customtkinter** (ctk), an extension of the module **tkinter**, you can find information on the following two links:
-    - https://github.com/TomSchimansky/CustomTkinter
+```bash
+>> python -m pip install -r requirements.txt
+```
+The applications are implemented with the module **customtkinter** (ctk), an extension of the module **tkinter**, you can find information on the following two links:  
+    - https://github.com/TomSchimansky/CustomTkinter  
     - https://customtkinter.tomschimansky.com/
-- Are also used:
-    - **CTkMessagebox** and the class **CTkMessagebox**: little additional ctk windows
-    - **pandas** to manage data from the .csv files
-    - **numpy** mainly to create lists
-    - **PIL** and the module **Image** to use images in the GUIs
-    - **typing** and the variable **List** to make the code more readable
-    - **abc** and the class **ABC** and function **abstractmethod** to create an abstract class
 
 
-# Architecture
+## Launch
 
-- Two .csv input files:
-    - **values.csv**: contains all the values in the following format: Name;Name_fr;Definition_fr
-    - **situations.csv**: contains all the situations in the following format: Id;Value1;Value2;Situation;Action1;Action2;Situation(acceptability);PathImage1;PathImage2
+- In order to launch the app, you have to run ``main.py``. It will then launch a Menu instance, i.e. a GUI that asks you what application you want to launch, and to select parameters. There are four applications:
+    - **Questionnaire** (*Questionnaire utilisateur*): an user questionnaire that allows to gather data about user profile.
+    - **ValuesSliders** (*Questionnaire valeurs*): presents all the values to the user and asks them to quantify their importance thanks to sliders.
+    - **ChoiceSituationGUI** (*Choix en situation*): presents a situation and two options, the user must choose one of the two possibilites.
+        - You can show the user the value that corresponds which corresponds to each option (*Montrer les valeurs*).
+        - You can ask the user to quantify how hard it is to decide with a slider (*Demander la difficulté*).
+        - You can ask the user to quantify the relevance of the situation (*Demander la pertinence*).
+    - **AcceptabilitySituationGUI** (*Acceptabilité*): presents a situation and the option chosen by the system. Ask the user to judge the option and decide if he should let the system act or intervene.
+- The parameter *Nombre de situations* allows to choose how many situations will be presented for each couple of values in the ChoiceSituationGUI and AcceptabilitySituationGUI.
+- The menu also asks what value you want to study.
+- The results and data processing are in the nootebok ``result_analysis.ipynb``.
 
-- Three .py files to manage data from the input files:
-    - **value.py**: contains the class Value
-    - **situation.py**: contains the class Situation
-    - **question.py**: contains the class Question
-    - **data_parser.py**: parse the two csv files and create Value and Situation instances
 
-- Six apps .py files :
-    - **general_GUI.py**: contains the abstract GUI class GeneralGUI
-        - **choice_situations.py**: contains the GUI class ChoiceSituationGUI that inherites from GeneralGUI
-        - **acceptability.py**: contains the GUI class AcceptabilityGUI that inherites from GeneralGUI
-    - **questionnaire.py**: contains the GUI class Questionnaire
-    - **sliders_GUI.py**: contains the GUI class SlidersGUI
-    - **menu.py**: contains the GUI class Menu, enables to choose what application to launch
-
-- One .py file to manage data from the Menu file:
-    - **user.py**: contains the class User
-
-- One .csv output file:
-    - **results.csv**: contains all the results from the User instance created in menu.py
-
-- One .py file to process results:
-    - **pairwise_comparison.py**: contains the class PairwiseComparison
-
-- One notebook of results processing:
-    - **results_analysis.ipynb**
+## Supplementary material
+ 
+This [google drive link](https://docs.google.com/spreadsheets/d/1Tqz-7S0gbLO5fKInpwF88NEyRvWMSgn35qGMMRKGPbw/edit?usp=sharing) gives access to:
+- all the values, their source and definition.
+- our categorisation.
+- all the situations.
