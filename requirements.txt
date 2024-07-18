@@ -1,0 +1,8 @@
+numpy
+pandas
+matplotlib
+plotly
+plot-likert
+customtkinter
+CTkMessagebox
+PIL
